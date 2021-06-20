@@ -11,9 +11,10 @@ echo "First Enter Network Protocal, noramally eth0 or tun0 or enp0s3"
 echo "(If unsure use ifconfig to work that out in another terminal window)!"
 read proto
 echo "$proto" > proto.txt
-echo "Enter Port (Default Port 21112)"
-read port
-echo "$port" > port.txt
+
+default_port="21112"
+read -p "Enter Port [$default_port]: " port
+echo $port > port.txt
 
 ip addr show $proto | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' > ip.txt
 localip=`cat ip.txt`
