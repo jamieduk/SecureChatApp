@@ -1,6 +1,7 @@
 #!/bin/bash
 # (c) J~Net 2021
 #
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 echo "Welcome To The Secure Message App 2021 Help Page"
 echo ""

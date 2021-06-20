@@ -1,11 +1,9 @@
 #!/bin/bash
 # (c) J~Net 2021
 #
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 # ./menu.sh
-#
-#path="/home/$USER/Documents/Scripts/"
-#
 #
 GREEN='\033[0;32m'
 printf "${GREEN}\n"

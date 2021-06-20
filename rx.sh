@@ -1,19 +1,22 @@
 #!/bin/bash
 # Netcat Bash Loop Line Code
+#
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
+#
 port=`cat port.txt` # port 21112
 sound=`cat sound.txt`
-
+#
 echo "Enter Key"
 read -s key
-
+#
 echo "Listening For Data..."
 echo ""
-
+#
 function Atone(){
 aplay $1
 echo -e "\07"
 }
-
+#
 function showdate(){
 date=$(date) # +%Y-%m-%d
 data="Date Is: $date"
@@ -59,6 +62,5 @@ data=`cat output.txt`
         else
           echo $data
         fi
-# < /[host/sender_file_path]/[filename.extention];
         echo ""
     done
