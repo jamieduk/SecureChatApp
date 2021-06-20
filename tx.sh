@@ -34,4 +34,3 @@ while true;
 # < /[host/sender_file_path]/[filename.extention]; 
         #echo refresh; 
     done
-

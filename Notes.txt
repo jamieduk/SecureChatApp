@@ -5,7 +5,10 @@
 
 site: jnet.sytes.net
 Forum: https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
-Github: git clone https://github.com/jamieduk/SecureChatApp.git
+Github: https://github.com/jamieduk/SecureChatApp
+
+
+git clone https://github.com/jamieduk/SecureChatApp.git
 
 
 Setting Up.....

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Netcat Bash Loop Line Code
-port=`cat port.txt` #21112
+port=`cat port.txt` # port 21112
 sound=`cat sound.txt`
 
 echo "Enter Key"

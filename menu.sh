@@ -9,7 +9,7 @@
 #
 GREEN='\033[0;32m'
 printf "${GREEN}\n"
-echo "Welcome To Secure Message App Menu 2021 Pick An Option..."
+echo "Welcome To Secure Message App 2021 Menu Pick An Option..."
 FILE=/usr/bin/figlet
 if [ -f "$FILE" ]; then
     figlet Secure Chat
