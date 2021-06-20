@@ -5,7 +5,7 @@
 echo "Welcome To The Secure Message App 2021 Setup"
 echo ""
 echo "Installing APlay for the Alert Tone Generator..."
-sudo apt install -y aplay figlet
+sudo apt install -y aplay figlet openssl
 sudo chmod +x *.sh
 echo ""
 echo "This will setup local and remote ip config file"
