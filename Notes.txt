@@ -28,4 +28,17 @@ else run
 
 and pick an option!
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Troubleshooting....
+
+
+Check file permissions for .sh files are allowed to execute.
+
+Check firewall rules for correct ports.
+
+Check router forwarding rules for external networking.
+
+
+
+
 
