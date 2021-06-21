@@ -31,6 +31,13 @@ else run
 
 and pick an option!
 
+
+For sound notification you can use any .wav sound file you wish but the default is 
+(for linux mint users)
+
+/usr/share/sounds/linuxmint-login.wav
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Troubleshooting....
 
