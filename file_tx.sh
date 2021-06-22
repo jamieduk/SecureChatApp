@@ -3,6 +3,7 @@
 # jnet.sytes.net
 #
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 myvar="$@"
 host_ip=`cat server.txt`

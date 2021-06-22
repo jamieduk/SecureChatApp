@@ -3,6 +3,7 @@
 # jnet.sytes.net
 #
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 echo -en "\e[92m "
 echo ""
@@ -37,8 +38,4 @@ bash menu.sh;;
 8) bash view_file.sh;;
 9) cd remote && bash menu.sh;;
 esac
-
-
-
-
 
