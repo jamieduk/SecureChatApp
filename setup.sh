@@ -28,7 +28,7 @@ echo $remote_ip > remote_ip.txt
 # Now alart Tone file setup
 echo "Choose Wav File For Alert Tone!"
 #
-default_sound="/usr/share/sounds/linuxmint-login.wav"
+default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 echo $sound > sound.txt
 #
