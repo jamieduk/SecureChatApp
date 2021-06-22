@@ -1,54 +1,30 @@
-/ ___|  ___  ___ _   _ _ __ ___   / ___| |__   __ _| |_ 
-\___ \ / _ \/ __| | | | '__/ _ \ | |   | '_ \ / _` | __|
- ___) |  __/ (__| |_| | | |  __/ | |___| | | | (_| | |_ 
-|____/ \___|\___|\__,_|_|  \___|  \____|_| |_|\__,_|\__|
-
-site: jnet.sytes.net
-Forum: https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
-Github: https://github.com/jamieduk/SecureChatApp
-
-
-git clone https://github.com/jamieduk/SecureChatApp.git
-
-
-Setting Up.....
-
-Run the following to get this app working...
-
-sudo chmod +x *.sh
-
-./menu.sh
-
-Then pick an option(
-
-First use run ./setup.sh or ./menu.sh Option 4.
-
-)
-
-else run
-
-./menu.sh
-
-and pick an option!
-
-
-For sound notification you can use any .wav sound file you wish but the default is 
-(for linux mint users)
-
-/usr/share/sounds/linuxmint-login.wav
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Troubleshooting....
-
-
-Check file permissions for .sh files are allowed to execute.
-
-Check firewall rules for correct ports.
-
-Check router forwarding rules for external networking.
 
 
 
 
+For Multi Tool 2021
 
+https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
+
+
+Update:
+
+2021
+
+Added Crypto / Encoding / Encryption!
+Using 7z so you need to use ./setup.sh to setup 7z.
+use 7z folder if you want to setup 7z on its own.
+Added compression (x=7)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some Tips:
+Check file and folder permissions for user intended for to make sure it works!
+Also open ports (forwarding ports) and firewalls if required for port 776 and 777
+and for remote shell the port is 1234, all these can be changed!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check all files permissions to make sure text files and folders are writable by desired user(s).
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
