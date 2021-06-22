@@ -3,10 +3,17 @@
 # jnet.sytes.net
 #
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
+# https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 echo "Enter Key"
 read -s key
 host_ip=`cat server.txt`
+sound=`cat sound.txt`
+function Atone(){
+aplay $1
+echo -e "\07"
+}
+
 while true;
 do
 #
@@ -28,7 +35,8 @@ do
     clear
 # bash synth.sh
     cat decrypted.txt
-    cat decrypted.txt >> all_messages.txt
+    cat decrypted.txt >> all_messages.txt &&
+    Atone $sound
     echo -en "\e[70m \c"
 #echo "Continue [ENTER]:"
 #read input123
