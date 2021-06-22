@@ -6,7 +6,7 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 myvar="$@"
-host_ip=`cat server.txt`
+host_ip=`cat remote_host.txt`
 #
 clear
 echo "Binary Server AKA SENDER"
