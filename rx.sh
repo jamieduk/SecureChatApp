@@ -3,6 +3,7 @@
 #
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+prog="nc" # LocalNet is /dev/tcp/ip/port
 port=`cat port.txt` # port 21112
 sound=`cat sound.txt`
 #
