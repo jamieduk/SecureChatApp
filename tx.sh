@@ -29,6 +29,6 @@ while true;
         read Edata
         NEdata=$(echo "$Edata" | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
         #nc -l $port
-        echo "$NEdata" >/dev/tcp/$remote_ip/$port
+        echo "$NEdata" > $prog $remote_ip $port #/dev/tcp/$remote_ip/$port
         echo "Message Sent"
     done
