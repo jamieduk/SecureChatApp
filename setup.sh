@@ -1,36 +1,39 @@
 #!/bin/bash
+# Linux Bash File & Messenger App (c) J~Net 2021
+# jnet.sytes.net
 #
+# ./setup.sh
+#
+# https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-echo "Welcome To The Secure Message App 2021 Setup"
-echo ""
-echo "Installing APlay for the Alert Tone Generator..."
-sudo apt install -y aplay figlet openssl
-sudo chmod +x *.sh
-echo ""
-echo "This will setup local and remote ip config file"
-echo ""
-echo "First Enter Network Protocal, noramally eth0 or tun0 or enp0s3"
-echo "(If unsure use ifconfig to work that out in another terminal window)!"
-read proto
-echo "$proto" > proto.txt
+echo "Linux Bash File & Messenger App (c) J~Net 2021"
 #
-default_port="21112"
-read -p "Enter Port [$default_port]: " port
-echo $port > port.txt
+defaultip="localhost"
 #
-ip addr show $proto | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' > ip.txt
-localip=`cat ip.txt`
-echo "Local IP Is $localip"
-echo "Enter Remote IP (For testing locally you can use $localip as a remote IP)!"
-read remote_ip
-echo $remote_ip > remote_ip.txt
-# Now alart Tone file setup
+if [ "$#" -eq  "0" ]
+  then
+        read -e -p "Enter Remote IP " -i "$defaultip" ip
+else
+    ip=$1
+fi
+#
+echo "$ip" > server.txt
+echo "New Remote IP Set To "
+cat server.txt
+
+echo "Setting up 7-Zip"
+sudo add-apt-repository universe
+sudo apt update -y
+
+sudo apt install -y p7zip-full p7zip-rar aplay figlet openssl
+
 echo "Choose Wav File For Alert Tone!"
 #
 default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 echo $sound > sound.txt
-#
 echo "Setup Complete, Returning to menu..."
-echo ""
+
+
+bash menu.sh
