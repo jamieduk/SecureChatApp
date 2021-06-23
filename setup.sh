@@ -12,7 +12,7 @@ echo ""
 echo "Setting File Permissions..."
 sudo chown $USER *.*
 #
-defaultip="localhost"
+defaultip=`cat remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
 echo "Update Remote Host IP"
 echo "Default is localhost delete localhost then put in IP, press enter."
