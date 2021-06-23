@@ -18,6 +18,7 @@ echo "6. Send File"
 echo "7. Setup Remote Server"
 echo "8. View Downloaded File"
 echo "9. Remote Shell"
+echo "10. Update Remote Host IP"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
@@ -37,5 +38,6 @@ bash menu.sh;;
 7) bash setup.sh;;
 8) bash view_file.sh;;
 9) cd remote && bash menu.sh;;
+10) bash update_host.sh;;
 esac
 
