@@ -36,7 +36,11 @@ echo "Setting up 7-Zip"
 sudo add-apt-repository universe
 sudo apt update -y
 
-sudo apt install -y p7zip-full p7zip-rar aplay figlet openssl
+sudo apt install -y p7zip-full
+sudo apt install -y p7zip-rar
+sudo apt install -y aplay
+sudo apt install -y figlet openssl
+#clear
 
 echo "Choose Wav File For Alert Tone!"
 #
