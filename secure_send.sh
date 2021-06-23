@@ -18,14 +18,12 @@ if [ -z "$*" ]; then
 fi
 #sudo ballbags
 #
-echo $myvar > msg.txt
+echo "$USER: $myvar" > msg.txt
 Edata=$(cat msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 #echo $Edata > msg.txt
 #myvar=`cat msg.txt`
 #zip -8 -r -q $myvar uploads/file.zip
-
-echo "Binary Server AKA SENDER"
-
+#echo "Binary Server AKA SENDER"
 echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $myvar \c"
 #sleep 0.2
 echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
