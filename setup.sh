@@ -14,6 +14,8 @@ sudo chown $USER *.*
 #
 defaultip="localhost"
 #
+echo "Update Remote Host IP"
+echo "Default is localhost delete localhost then put in IP, press enter."
 if [ "$#" -eq  "0" ]
   then
         read -e -p "Enter Remote IP " -i "$defaultip" ip
