@@ -10,7 +10,8 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 echo "Setting File Permissions..."
-sudo chown $USER *.*
+sudo chown $USER *.txt
+sudo chmod +x *.sh
 #
 defaultip=`cat remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
