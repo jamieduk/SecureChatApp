@@ -40,6 +40,6 @@ bash menu.sh;;
 8) bash view_file.sh;;
 9) cd remote && bash menu.sh;;
 10) bash update_host.sh;;
-10) bash update_alias.sh;;
+11) bash update_alias.sh;;
 esac
 
