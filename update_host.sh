@@ -20,3 +20,6 @@ fi
 echo "$ip" > remote_host.txt
 echo "New Remote IP Set To "
 cat remote_host.txt
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh
