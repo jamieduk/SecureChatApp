@@ -16,20 +16,19 @@ if [ -z "$*" ]; then
     echo "Enter Text To Send: "
     read myvar; 
 fi
-#
-sudo ballbags
+#sudo ballbags
 #
 echo $myvar > msg.txt
 Edata=$(cat msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 #echo $Edata > msg.txt
 #myvar=`cat msg.txt`
 #zip -8 -r -q $myvar uploads/file.zip
-clear
+
 echo "Binary Server AKA SENDER"
-clear
-echo -en "\e[92mPress Ctrl + C To Confirm Sending New Secure Message! $myvar \c"
-sleep 0.2
-echo $Edata | nc $host_ip 776
+
+echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $myvar \c"
+#sleep 0.2
+echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
 count=0
 total=34
 pstr="[=======================================================================]"
