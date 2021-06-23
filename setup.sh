@@ -14,6 +14,7 @@ sudo chown $USER *.*
 #
 defaultip=`cat remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
+default_alias="$USER"
 echo "Update Remote Host IP"
 echo "Default is localhost delete localhost then put in IP, press enter."
 if [ "$#" -eq  "0" ]
@@ -26,6 +27,10 @@ fi
 echo "$ip" > remote_host.txt
 echo "New Remote IP Set To "
 cat remote_host.txt
+
+echo "Now lets choose your username / alias"
+read -e -p "Enter Alias" -i "$default_alias" uralias
+echo $uralias > alias.txt
 
 echo "Setting up 7-Zip"
 sudo add-apt-repository universe
