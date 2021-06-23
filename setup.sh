@@ -8,6 +8,9 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
+echo ""
+echo "Setting File Permissions..."
+sudo chown $USER *.*
 #
 defaultip="localhost"
 #
@@ -18,9 +21,9 @@ else
     ip=$1
 fi
 #
-echo "$ip" > server.txt
+echo "$ip" > remote_host.txt
 echo "New Remote IP Set To "
-cat server.txt
+cat remote_host.txt
 
 echo "Setting up 7-Zip"
 sudo add-apt-repository universe
