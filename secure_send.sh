@@ -8,6 +8,8 @@
 echo "Enter Key"
 read -s key
 host_ip=`cat remote_host.txt`
+alias=`cat alias.txt`
+echo "Remote $host_ip"
 while true;
 do
 #
@@ -18,7 +20,7 @@ if [ -z "$*" ]; then
 fi
 #sudo ballbags
 #
-echo "$USER: $myvar" > msg.txt
+echo "$alias: $myvar" > msg.txt
 Edata=$(cat msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 #echo $Edata > msg.txt
 #myvar=`cat msg.txt`
