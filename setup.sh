@@ -28,25 +28,26 @@ fi
 echo "$ip" > remote_host.txt
 echo "New Remote IP Set To "
 cat remote_host.txt
-
+echo ""
 echo "Now lets choose your username / alias"
 read -e -p "Enter Alias " -i "$default_alias" uralias
 echo $uralias > alias.txt
-
+echo ""
 echo "Setting up 7-Zip"
 sudo add-apt-repository universe
 sudo apt update -y
-
+echo ""
 sudo apt install -y p7zip-full
 sudo apt install -y p7zip-rar
 sudo apt install -y aplay
 sudo apt install -y figlet openssl
 #clear
-
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 echo $sound > sound.txt
+echo ""
 echo "Setup Complete, Returning to menu..."
-
+echo "Press Enter To Return To Menu"
+read Y
 bash menu.sh
