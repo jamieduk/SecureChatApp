@@ -7,13 +7,8 @@
 port=777
 clear
 echo "Binary Client Reciever"
-#echo "Enter Secure Password"
-#read password
+
 echo -en "\e[92mPlease Wait \c"
-#sudo nc -l -w 1 -p 777 | gzip -dfc|tar -xvf -
-#sudo nc -vv -w 1 -l 777 > downloads/file.gz
-#sudo nc -l -p 777 > downloads/file.zip
-#sudo nc -v -w 2 $host_ip -l -p $port > downloads/file.gz
 sudo nc -v -w 200 $host_ip -l -p $port > downloads/file.7z
 count=0
 total=34
@@ -27,7 +22,5 @@ while [ $count -lt $total ]; do
 done
 
 echo "All Done!"
-#file output
-#cat output
 bash view_file.sh
 bash menu.sh
