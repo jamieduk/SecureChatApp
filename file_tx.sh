@@ -5,6 +5,7 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+port=777
 input="$@"
 host_ip=`cat remote_host.txt`
 #
@@ -24,7 +25,7 @@ echo -en "\e[92mPlease Wait \c"
 sudo mv file.7z uploads/file.7z
 #sudo mv file.zip uploads/file.zip
 #$input
-sudo dd if=uploads/file.7z bs=32M |nc $host_ip 777
+sudo dd if=uploads/file.7z bs=32M |nc $host_ip $port & sleep 1 ; kill $!
 #sudo nc -v -w 2 777 < uploads/file.gz
 count=0
 total=34
