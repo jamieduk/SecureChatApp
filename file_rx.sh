@@ -4,7 +4,7 @@
 #
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
-port="777"
+port=777
 clear
 echo "Binary Client Reciever"
 #echo "Enter Secure Password"
@@ -14,7 +14,7 @@ echo -en "\e[92mPlease Wait \c"
 #sudo nc -vv -w 1 -l 777 > downloads/file.gz
 #sudo nc -l -p 777 > downloads/file.zip
 #sudo nc -v -w 2 $host_ip -l -p $port > downloads/file.gz
-sudo nc -v -w 2 $host_ip -l -p $port > downloads/file.7z
+sudo nc -v -w 200 $host_ip -l -p $port > downloads/file.7z
 count=0
 total=34
 pstr="[=======================================================================]"
