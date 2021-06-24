@@ -49,6 +49,7 @@ echo $sound > sound.txt
 echo ""
 sudo mkdir downloads
 sudo mkdir uploads
+sudo chown $USER *.*
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y
