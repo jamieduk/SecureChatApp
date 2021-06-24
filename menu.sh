@@ -20,6 +20,7 @@ echo "8. View Downloaded File"
 echo "9. Remote Shell"
 echo "10. Update Remote Host IP"
 echo "11. Update Alias"
+echo "12. Repair A Corrupted Message"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
@@ -41,5 +42,6 @@ bash menu.sh;;
 9) cd remote && bash menu.sh;;
 10) bash update_host.sh;;
 11) bash update_alias.sh;;
+12) bash repair.sh;;
 esac
 
