@@ -47,6 +47,8 @@ default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 echo $sound > sound.txt
 echo ""
+sudo mkdir downloads
+sudo mkdir uploads
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y
