@@ -16,6 +16,8 @@ sudo touch config/all_messages.txt
 sudo touch config/decrypted.txt
 sudo touch config/rmsg.txt
 sudo touch config/sound.txt
+sudo touch config/decrypted.txt
+sudo chown $USER config/decrypted.txt
 #
 defaultip=`cat config/remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
@@ -81,7 +83,7 @@ echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 sudo chown $USER config/sound.txt
-sudo echo $sound > config/sound.txt
+echo $default_sound > config/sound.txt
 echo ""
 echo "Sound Set To "
 cat config/sound.txt
@@ -130,6 +132,7 @@ cd config
 sudo chown $USER config downloads uploads
 sudo chmod +x *.sh*
 cd $placeholder
+sudo chown $USER config/all_messages.txt
 
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
