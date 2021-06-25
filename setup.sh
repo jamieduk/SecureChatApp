@@ -48,8 +48,30 @@ else
     sudo apt install -y p7zip-rar
 fi
 
-sudo apt install -y aplay
-sudo apt install -y figlet openssl
+FILE=/usr/bin/aplay
+if [ -f "$FILE" ]; then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    sudo apt install -y aplay
+fi
+
+FILE=/usr/bin/figlet
+if [ -f "$FILE" ]; then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    sudo apt install -y figlet
+fi
+
+
+FILE=/usr/bin/openssl
+if [ -f "$FILE" ]; then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    sudo apt install -y openssl
+fi
 #clear
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
