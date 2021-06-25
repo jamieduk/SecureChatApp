@@ -9,20 +9,20 @@ host_ip=`cat config/remote_host.txt`
 while true;
 do
 #
-myvar="$@"
+input="$@"
 if [ -z "$*" ]; then 
     echo "Enter Text To Send: "
-    read myvar; 
+    read input; 
 fi
 #
 sudo ballbags
 #
-echo $myvar > config/msg.txt
-#zip -8 -r -q $myvar uploads/file.zip
+echo $input > config/msg.txt
+#zip -8 -r -q $input uploads/file.zip
 clear
 echo "Binary Server AKA SENDER"
 clear
-echo -en "\e[92mPress Ctrl + C To Confirm Sending New Secure Message! $myvar \c"
+echo -en "\e[92mPress Ctrl + C To Confirm Sending New Secure Message! $input \c"
 sleep 0.2
 cat config/msg.txt | nc $host_ip 776
 count=0

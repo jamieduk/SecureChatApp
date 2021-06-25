@@ -9,9 +9,13 @@
 #
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
-echo "Setting File Permissions..."
-sudo chown $USER config/*.txt
-sudo chmod +x *.sh
+#
+sudo touch config/remote_host.txt
+sudo touch config/alias.txt
+sudo touch config/all_messages.txt
+sudo touch config/decrypted.txt
+sudo touch config/rmsg.txt
+sudo touch config/sound.txt
 #
 defaultip=`cat config/remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
@@ -25,12 +29,14 @@ else
     ip=$1
 fi
 #
+sudo chown $USER config/remote_host.txt
 echo "$ip" > config/remote_host.txt
 echo "New Remote IP Set To "
 cat config/remote_host.txt
 echo ""
 echo "Now lets choose your username / alias"
 read -e -p "Enter Alias " -i "$default_alias" uralias
+sudo chown $USER config/alias.txt
 echo $uralias > config/alias.txt
 echo ""
 
@@ -74,8 +80,11 @@ fi
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
-echo $sound > config/sound.txt
+sudo chown $USER config/sound.txt
+sudo echo $sound > config/sound.txt
 echo ""
+echo "Sound Set To "
+cat config/sound.txt
 
 folder=downloads
 if [ -d "$folder" ]; then
@@ -115,6 +124,13 @@ else
 fi
 
 sudo chown $USER *.*
+echo "Setting File Permissions..."
+placeholder=`pwd`
+cd config
+sudo chown $USER config downloads uploads
+sudo chmod +x *.sh*
+cd $placeholder
+
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y

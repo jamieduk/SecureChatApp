@@ -42,7 +42,7 @@ do
     echo "Waiting For New Message"
     echo ""
     sudo nc -l -w 550 -p 776 > config/rmsg.txt &&
-    cat rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
+    cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
     sleep 0.006 # this is work
 #echo "All Done!"

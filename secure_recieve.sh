@@ -8,8 +8,8 @@
 port=776
 echo "Enter Key"
 read -s key
-host_ip=`cat remote_host.txt`
-sound=`cat sound.txt`
+host_ip=`cat config/remote_host.txt`
+sound=`cat config/sound.txt`
 function Atone(){
 aplay $1
 #echo -e "\07"
@@ -24,12 +24,12 @@ do
     cat decrypted.txt
     echo "Waiting For New Message"
     echo ""
-    sudo nc -l -w 550 -p $port > rmsg.txt &&
-    cat rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > decrypted.txt
-    cat decrypted.txt
+    sudo nc -l -w 550 -p $port > config/rmsg.txt &&
+    cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
+    cat config/decrypted.txt
     sleep 0.006
-    cat decrypted.txt
-    cat decrypted.txt >> all_messages.txt
+    cat config/decrypted.txt
+    cat config/decrypted.txt >> config/all_messages.txt
     Atone $sound
     echo -en "\e[70m \c"
     sleep 5

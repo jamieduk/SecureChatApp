@@ -8,7 +8,7 @@
 echo "Enter Key"
 read -s key
 host_ip=`cat config/remote_host.txt`
-alias=`cat alias.txt`
+alias=`cat config/alias.txt`
 echo "Remote Host IP $host_ip"
 while true;
 do
