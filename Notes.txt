@@ -23,8 +23,8 @@ Update:
 
 2021
 
-Added Crypto / Encoding + Encryption!
-Using 7z so you need to use ./setup.sh to setup 7z.
+Added Crypto / Encoding + Encryption! des-ede3-cbc for Message Encryption.
+Using 7z so you need to use ./setup.sh to setup 7z For File Encryption.
 use 7z folder if you want to setup 7z on its own.
 Added compression (x=7)
 Added Key Security for send / recieing secure messages.
