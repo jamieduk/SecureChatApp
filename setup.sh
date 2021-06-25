@@ -33,12 +33,21 @@ echo "Now lets choose your username / alias"
 read -e -p "Enter Alias " -i "$default_alias" uralias
 echo $uralias > alias.txt
 echo ""
-echo "Setting up 7-Zip"
-sudo add-apt-repository universe
-sudo apt update -y
-echo ""
-sudo apt install -y p7zip-full
-sudo apt install -y p7zip-rar
+
+
+FILE=/usr/bin/7z
+if [ -f "$FILE" ]; then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    echo "Setting up 7-Zip"
+    sudo add-apt-repository universe
+    sudo apt update -y
+    echo ""
+    sudo apt install -y p7zip-full
+    sudo apt install -y p7zip-rar
+fi
+
 sudo apt install -y aplay
 sudo apt install -y figlet openssl
 #clear
