@@ -34,7 +34,6 @@ read -e -p "Enter Alias " -i "$default_alias" uralias
 echo $uralias > alias.txt
 echo ""
 
-
 FILE=/usr/bin/7z
 if [ -f "$FILE" ]; then
     echo "$FILE Already Installed."
@@ -64,7 +63,6 @@ else
     sudo apt install -y figlet
 fi
 
-
 FILE=/usr/bin/openssl
 if [ -f "$FILE" ]; then
     echo "$FILE Already Installed."
@@ -78,8 +76,25 @@ default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 echo $sound > sound.txt
 echo ""
-sudo mkdir downloads
-sudo mkdir uploads
+
+folder=downloads
+if [ -d "$folder" ]; then
+    echo "$folder exists."
+else 
+    echo "$folder does not exist."
+    sudo mkdir $folder
+    sudo chown $USER $folder 
+fi
+
+folder=uploads
+if [ -d "$folder" ]; then
+    echo "$folder exists."
+else 
+    echo "$folder does not exist."
+    sudo mkdir $folder
+    sudo chown $USER $folder 
+fi
+
 sudo chown $USER *.*
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
