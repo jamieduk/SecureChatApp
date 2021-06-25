@@ -133,8 +133,8 @@ fi
 sudo chown $USER *.*
 echo "Setting File Permissions..."
 placeholder=`pwd`
-cd config
-sudo chown $USER config downloads uploads
+#cd config
+sudo chown -R $USER: config downloads uploads
 sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
