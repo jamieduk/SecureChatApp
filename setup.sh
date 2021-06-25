@@ -91,32 +91,32 @@ cat config/sound.txt
 folder=downloads
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 fi
 
 folder=sounds
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 fi
 
 
 folder=config
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 fi
 cUSER=$(stat -c '%U' $folder)
 echo $cUSER
@@ -127,7 +127,7 @@ if [ -d "$folder" ]; then
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
-    sudo chown $USER $folder 
+    sudo chown -R $USER $folder 
 fi
 
 sudo chown $USER *.*
