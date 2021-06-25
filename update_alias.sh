@@ -19,7 +19,7 @@ fi
 #
 echo "$uralias" > config/alias.txt
 echo "New Alias Set To "
-cat alias.txt
+cat config/alias.txt
 echo "Press Enter To Go Back To Menu"
 read Y
 bash menu.sh
