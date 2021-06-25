@@ -121,8 +121,10 @@ else
     sudo mkdir $folder
     sudo chown -R $USER $folder 
 fi
+#
+# See who owns this!
 cUSER=$(stat -c '%U' $folder)
-echo $cUSER
+#echo $cUSER
 
 folder=uploads
 if [ -d "$folder" ]; then
