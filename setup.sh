@@ -17,7 +17,10 @@ sudo touch config/decrypted.txt
 sudo touch config/rmsg.txt
 sudo touch config/sound.txt
 sudo touch config/decrypted.txt
+sudo touch config/msg.txt
 sudo chown $USER config/decrypted.txt
+sudo chown $USER config/all_messages.txt
+sudo chown $USER config/msg.txt
 #
 defaultip=`cat config/remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
