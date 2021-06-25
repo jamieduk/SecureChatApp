@@ -6,10 +6,11 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 port=777
 clear
-echo "Binary Client Reciever"
-
+echo "J~Net File Reciever"
+#echo "Enter Secure Password"
+#read password
 echo -en "\e[92mPlease Wait \c"
-sudo nc -v -w 200 $host_ip -l -p $port > downloads/file.7z
+sudo nc -v -w 2 $host_ip -l -p $port > downloads/file.7z
 count=0
 total=34
 pstr="[=======================================================================]"

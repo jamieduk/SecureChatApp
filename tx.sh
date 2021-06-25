@@ -2,12 +2,12 @@
 #
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-proto=`cat proto.txt`
-ip addr show $proto | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' > ip.txt
-localip=`cat ip.txt`
+proto=`cat config/proto.txt`
+ip addr show $proto | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' > config/ip.txt
+localip=`cat config/ip.txt`
 data="$USER Connected Via $localip" # playermsg testing
-remote_ip=`cat remote_ip.txt` #"127.0.0.1"
-port=`cat port.txt` #"21112"
+remote_ip=`cat config/remote_ip.txt` #"127.0.0.1"
+port=`cat config/port.txt` #"21112"
 prog="nc" # LocalNet is /dev/tcp/ip/port
 #
 echo "Enter Key"

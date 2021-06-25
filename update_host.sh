@@ -9,7 +9,7 @@
 #
 echo "Update Remote Host IP"
 echo "Default is localhost delete localhost then put in IP, press enter."
-defaultip=`cat remote_host.txt`
+defaultip=`cat config/remote_host.txt`
 if [ "$#" -eq  "0" ]
   then
         read -e -p "Enter Remote IP " -i "$defaultip" ip
@@ -17,9 +17,9 @@ else
     ip=$1
 fi
 #
-echo "$ip" > remote_host.txt
+echo "$ip" > config/remote_host.txt
 echo "New Remote IP Set To "
-cat remote_host.txt
+cat config/remote_host.txt
 echo "Press Enter To Go Back To Menu"
 read Y
 bash menu.sh

@@ -7,7 +7,7 @@
 #
 echo "Enter Key"
 read -s key
-host_ip=`cat remote_host.txt`
+host_ip=`cat config/remote_host.txt`
 alias=`cat alias.txt`
 echo "Remote Host IP $host_ip"
 while true;
@@ -19,8 +19,8 @@ if [ -z "$*" ]; then
     read input; 
 fi
 #
-echo "$alias: $input" > msg.txt
-Edata=$(cat msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
+echo "$alias: $input" > config/msg.txt
+Edata=$(cat config/msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
@@ -40,3 +40,4 @@ sleep 5
 done
 trap "sh send.sh; exit;" SIGINT SIGTERM;
 sh send.sh
+

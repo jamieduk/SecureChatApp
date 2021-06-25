@@ -10,10 +10,10 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 echo "Setting File Permissions..."
-sudo chown $USER *.txt
+sudo chown $USER config/*.txt
 sudo chmod +x *.sh
 #
-defaultip=`cat remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
+defaultip=`cat config/remote_host.txt` # can be changed to localhost if you want that as your default remote ip!
 #
 default_alias="$USER"
 echo "Update Remote Host IP"
@@ -25,13 +25,13 @@ else
     ip=$1
 fi
 #
-echo "$ip" > remote_host.txt
+echo "$ip" > config/remote_host.txt
 echo "New Remote IP Set To "
-cat remote_host.txt
+cat config/remote_host.txt
 echo ""
 echo "Now lets choose your username / alias"
 read -e -p "Enter Alias " -i "$default_alias" uralias
-echo $uralias > alias.txt
+echo $uralias > config/alias.txt
 echo ""
 
 FILE=/usr/bin/7z
@@ -72,12 +72,31 @@ else
 fi
 #clear
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
-default_sound="notification.wav" # /usr/share/sounds/linuxmint-login.wav
+default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
-echo $sound > sound.txt
+echo $sound > config/sound.txt
 echo ""
 
 folder=downloads
+if [ -d "$folder" ]; then
+    echo "$folder exists."
+else 
+    echo "$folder does not exist."
+    sudo mkdir $folder
+    sudo chown $USER $folder 
+fi
+
+folder=sounds
+if [ -d "$folder" ]; then
+    echo "$folder exists."
+else 
+    echo "$folder does not exist."
+    sudo mkdir $folder
+    sudo chown $USER $folder 
+fi
+
+
+folder=config
 if [ -d "$folder" ]; then
     echo "$folder exists."
 else 

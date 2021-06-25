@@ -35,8 +35,8 @@ bash menu.sh;;
 5) bash file_rx.sh;;
 # send arg here
 6)  echo "Enter Filename"
-    read myvar
-    bash file_tx.sh "$myvar";;
+    read input
+    bash file_tx.sh "$input";;
 7) bash setup.sh;;
 8) bash view_file.sh;;
 9) cd remote && bash menu.sh;;

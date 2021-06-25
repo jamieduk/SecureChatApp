@@ -17,10 +17,9 @@ else
     uralias=$1
 fi
 #
-echo "$uralias" > alias.txt
+echo "$uralias" > config/alias.txt
 echo "New Alias Set To "
 cat alias.txt
 echo "Press Enter To Go Back To Menu"
 read Y
 bash menu.sh
-

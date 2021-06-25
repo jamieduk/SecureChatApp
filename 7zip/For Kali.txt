@@ -1,0 +1,5 @@
+https://www.howtoforge.com/tutorial/how-to-install-and-use-7zip-file-archiver-on-ubuntu-linux/#download-and-installation-of-zip
+
+
+sudo apt install -y p7zip-full
+

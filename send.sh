@@ -5,7 +5,7 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-host_ip=`cat remote_host.txt`
+host_ip=`cat config/remote_host.txt`
 while true;
 do
 #
@@ -17,14 +17,14 @@ fi
 #
 sudo ballbags
 #
-echo $myvar > msg.txt
+echo $myvar > config/msg.txt
 #zip -8 -r -q $myvar uploads/file.zip
 clear
 echo "Binary Server AKA SENDER"
 clear
 echo -en "\e[92mPress Ctrl + C To Confirm Sending New Secure Message! $myvar \c"
 sleep 0.2
-cat msg.txt | nc $host_ip 776
+cat config/msg.txt | nc $host_ip 776
 count=0
 total=34
 pstr="[=======================================================================]"

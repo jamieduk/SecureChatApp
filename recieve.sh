@@ -5,7 +5,7 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-host_ip=`cat remote_host.txt`
+host_ip=`cat config/remote_host.txt`
 while true;
 do
 #
@@ -13,16 +13,16 @@ do
     clear
     echo "Previous Message: "
     echo ""
-    cat rmsg.txt
+    cat config/rmsg.txt
     echo ""
     echo "Waiting For New Message"
-    sudo nc -l -w 1 -p 776 > rmsg.txt
+    sudo nc -l -w 1 -p 776 > config/rmsg.txt
 #echo "All Done!"
 #echo -en"\e[94m \c"
     clear
 # bash synth.sh
-    cat rmsg.txt
-    cat rmsg.txt >> all_messages.txt
+    cat config/rmsg.txt
+    cat config/rmsg.txt >> config/all_messages.txt
     echo -en "\e[70m \c"
 #echo "Continue [ENTER]:"
 #read input123
