@@ -13,5 +13,8 @@ cd downloads
 echo "Files Downloaded: "
 echo ""
 ls
+echo "Press Enter To Continue"
+read Y
+
 cd ..
 bash menu.sh
