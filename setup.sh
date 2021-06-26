@@ -85,7 +85,7 @@ fi
 sudo chown $USER config/sound.txt
 echo ""
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
-default_sound=`cat config/sound.txt` # /usr/share/sounds/linuxmint-login.wav
+default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 if [ -z "$sound" ]
 then
@@ -158,7 +158,7 @@ placeholder=`pwd`
 sudo chown -R $USER: config downloads uploads
 sudo chmod +x *.sh*
 cd $placeholder
-sudo chown $USER config/all_messages.txt
+sudo chown $USER config/*
 
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
