@@ -20,5 +20,5 @@ else
 fi
 
 echo ""
-yes | sudo cp -r SecureChatApp/* $path
+yes | sudo cp -r $path/SecureChatApp/* $path
 
