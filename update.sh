@@ -13,7 +13,7 @@ pwd=`pwd`
 echo "Update J~NET Multi Tool 2021"
 sudo mkdir update
 sudo chown -R $USER update
-cd update
+cd $pwd/update
 git clone https://github.com/$account/$product.git
 cd update/$product/
 sudo mv --force config old
