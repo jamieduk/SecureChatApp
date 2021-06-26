@@ -5,7 +5,7 @@ echo "$pwd"
 #
 path=$pwd
 cd $path
-account="$account"
+account="jamieduk"
 product="SecureChatApp"
 sudo chown -R $USER $path
 
