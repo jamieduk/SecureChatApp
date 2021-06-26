@@ -15,13 +15,13 @@ sudo mkdir update
 sudo chown -R $USER update
 cd update
 git clone https://github.com/$account/$product.git
-cd SecureChatApp
+cd update/$product/
 sudo mv --force config old
 sudo mv --force old 2>/dev/null
 sudo mv --force -u * $pwd
 cd $pwd
-sudo mv --force update 2>/dev/null
 sudo rm -rf update
+sudo rm -rf old
 echo "Update Complete!"
 echo ""
 echo "Press Enter To Go Back To Menu"
