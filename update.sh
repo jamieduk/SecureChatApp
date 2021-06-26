@@ -16,7 +16,7 @@ current_version=`cat config/version.txt`
 wget $test -o check.txt
 latest_version=`cat check.txt`
 echo $latest_version
-latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
+latest_version=`cat version.txt|grep "<strong></strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
 echo "Latest Version $latest_version"
 echo "Current Version $current_version"
