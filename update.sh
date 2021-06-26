@@ -9,18 +9,19 @@
 #
 account="jamieduk"
 product="SecureChatApp"
-test="https://github.com/jamieduk/SecureChatApp/blob/main/config/version.txt"
+test="https://raw.githubusercontent.com/$account/$product/main/config/version.txt"
 #update_check=`cat $test`
 pwd=`pwd`
 current_version=`cat config/version.txt`
 wget $test -o check.txt
-latest_version=`cat check.txt`
+cat check.txt|grep "<strong></strong>"|sed 's/[^0-9]*//g' > version.txt
+latest_version=`cat version.txt`
 echo $latest_version
-latest_version=`cat version.txt|grep "<strong></strong>"|sed 's/[^0-9]*//g' `
+latest_version=` `
 #if[$latest_version]
 echo "Latest Version $latest_version"
 echo "Current Version $current_version"
-if [ "$latest_version" -gt "$current_version" ]
+if [ "$latest_version" > "$current_version" ]
 then
     echo "Update Required!"
     echo "Update J~NET Multi Tool 2021"
@@ -44,6 +45,22 @@ then
     cd $pwd
     echo "Current Folder Is "
     pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f $pwd/version.txt
+    #clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
+fi
+
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh   
+
     sudo rm -rf update
     sudo rm -rf old
     sudo chmod +x *.sh
