@@ -9,34 +9,53 @@
 #
 account="jamieduk"
 product="SecureChatApp"
+test="https://github.com/jamieduk/SecureChatApp/blob/main/config/version.txt"
+#update_check=`cat $test`
 pwd=`pwd`
-echo "Update J~NET Multi Tool 2021"
-sudo mkdir update
-sudo chown -R $USER update
-cd $pwd/update
-echo "Current Folder Is "
-pwd
-git clone https://github.com/$account/$product.git
-cd $pwd/update/$product/
-echo "Current Folder Is "
-pwd
-sudo mv --force config old
-sudo mv --force old 2>/dev/null
-sudo mv --force -u * $pwd
-src="$pwd/update/$product/*"
-dest="$pwd"
-sudo tar -cvzpf update.tar.gz $src
-sudo tar -xvzpf update.tar.gz $dest
-sudo rm -f update.tar.gz
-cd $pwd
-echo "Current Folder Is "
-pwd
-sudo rm -rf update
-sudo rm -rf old
-sudo chmod +x *.sh
-sudo chown -R $USER config/*
-echo "Update Complete!"
-echo ""
+current_version=`cat config/version.txt`
+wget $test -o check.txt
+latest_version=`cat check.txt`
+echo $latest_version
+latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
+#if[$latest_version]
+echo $latest_version
+if [ $latest_version -gt $current_version ]
+then
+    echo "Update Required!"
+    echo "Update J~NET Multi Tool 2021"
+    sudo mkdir update
+    sudo chown -R $USER update
+    cd $pwd/update
+    echo "Current Folder Is "
+    pwd
+    git clone https://github.com/$account/$product.git
+    cd $pwd/update/$product/
+    echo "Current Folder Is "
+    pwd
+    sudo mv --force config old
+    sudo mv --force old 2>/dev/null
+    sudo mv --force -u * $pwd
+    src="$pwd/update/$product/*"
+    dest="$pwd"
+    sudo tar -cvzpf update.tar.gz $src
+    sudo tar -xvzpf update.tar.gz $dest
+    sudo rm -f update.tar.gz
+    cd $pwd
+    echo "Current Folder Is "
+    pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f version.txt
+    clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
+fi
+
 echo "Press Enter To Go Back To Menu"
 read Y
-bash menu.sh
+bash menu.sh   
+
