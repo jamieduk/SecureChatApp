@@ -10,22 +10,23 @@
 account="jamieduk"
 product="SecureChatApp"
 test="https://github.com/$account/$product/raw/main/config/version.txt"
-#update_check=`cat $test`
+# Get Directory Name
 pwd=`pwd`
-current_version=`cat config/version.txt`
-echo "Current Version Installed: $current_version"
-#
+# Load Current Version
+current_version=`cat $pwd/config/version.txt`
+# Get New Version
 wget $test
-# wget https://github.com/jamieduk/SecureChatApp/blob/main/config/version.txt -o check.txt
+# wget https://github.com/jamieduk/SecureChatApp/blob/main/config/version.txt
 # Debug
+echo "Current Version Installed: $current_version"
 echo "Latest Version Available: $latest_version"
-cat version.txt
+#cat version.txt|sed 's/[^0-9]*//g' > version.txt
 # Actual!
-cat version.txt|grep "Version"|sed 's/[^0-9]*//g' > version.txt
-latest_version=`cat version.txt`
+#cat version.txt|grep "Version"|sed 's/[^0-9]*//g' > version.txt
+latest_version=`cat version.txt|grep "Version"|sed 's/[^0-9]*//g'`
 #
 echo ""
-latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
+#latest_version=`cat version.txt|grep "<strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
 #echo $latest_version
 if [ "$latest_version" > $current_version ]
@@ -69,129 +70,4 @@ fi
 
 echo "Press Enter To Go Back To Menu"
 read Y
-bash menu.sh   
-
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo rm -rf version.txt 1 version.txt.1
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-    echo "Attempting Cleanup For Accurate Results Enter Password"
-    sudo rm -rf version.txt 1 version.txt.1
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo rm -rf version.txt 1 version.txt.1
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-    sudo rm -rf version.txt 1 version.txt.1
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    echo "Current Folder Is "
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
-    #clear
-    echo "Update Complete!"
-    echo ""
-else
-    echo "No Update Required, You have the latest and greatest version already!"
-fi
-
-echo "Press Enter To Go Back To Menu"
-read Y
-bash menu.sh   
-
+bash menu.sh
