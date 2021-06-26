@@ -19,4 +19,7 @@ cd SecureChatApp
 sudo mv -f --ignore-fail-on-non-empty config old
 sudo rmdir --ignore-fail-on-non-empty old
 sudo mv -f -u --ignore-fail-on-non-empty * $pwd
+cd $pwd
+sudo rmdir --ignore-fail-on-non-empty update
+
 
