@@ -21,5 +21,6 @@ sudo mv --force old 2>/dev/null
 sudo mv --force -u * $pwd
 cd $pwd
 sudo mv --force update 2>/dev/null
+sudo rm -rf update
 
 
