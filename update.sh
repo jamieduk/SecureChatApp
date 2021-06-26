@@ -56,6 +56,26 @@ then
     echo ""
 else
     echo "No Update Required, You have the latest and greatest version already!"
+    echo "Attempting Cleanup For Accurate Results Enter Password"
+    sudo rm -rf version.txt 1 version.txt.1
+fi
+
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh   
+
+    pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo rm -rf version.txt 1 version.txt.1
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f $pwd/version.txt
+    #clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
     sudo rm -rf version.txt 1 version.txt.1
 fi
 
