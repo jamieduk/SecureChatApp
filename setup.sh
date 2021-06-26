@@ -82,11 +82,18 @@ else
     sudo apt install -y openssl
 fi
 #clear
+sudo chown $USER config/sound.txt
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
-sudo chown $USER config/sound.txt
-echo $default_sound > config/sound.txt
+if [ -z "$sound" ]
+then
+      sound=$default_sound
+else
+      echo "$sound"
+fi
+
+echo $sound > config/sound.txt
 echo ""
 echo "Sound Set To "
 cat config/sound.txt
