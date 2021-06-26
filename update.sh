@@ -14,6 +14,7 @@ echo "Update J~NET Multi Tool 2021"
 sudo mkdir update
 sudo chown -R $USER update
 cd $pwd/update
+echo "Current Folder Is "
 pwd
 git clone https://github.com/$account/$product.git
 cd $pwd/update/$product/
@@ -27,12 +28,13 @@ dest="$pwd"
 sudo tar -cvzpf update.tar.gz $src
 sudo tar -xvzpf update.tar.gz $dest
 sudo rm -f update.tar.gz
-
 cd $pwd
-pwd
 echo "Current Folder Is "
+pwd
 sudo rm -rf update
 sudo rm -rf old
+sudo chmod +x *.sh
+sudo chown -r $USER config/*
 echo "Update Complete!"
 echo ""
 echo "Press Enter To Go Back To Menu"
