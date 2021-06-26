@@ -19,10 +19,12 @@ then
 else 
     #git clone https://github.com/$account/$product.git $product;
     git clone https://github.com/$account/$product.git $product;
-    cd $product && sudo rm -rf config && cd ..
+    #cd $product && sudo rm -rf config && cd ..
 fi
 
 echo ""
 yes | sudo cp -r $path/$product/* $path
 sudo rm -rf $path/$product
+sudo chown $USER $path/*
+sudo chmod +x $path/*.sh
 bash $path/setup.sh
