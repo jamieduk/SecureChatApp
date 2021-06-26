@@ -34,7 +34,7 @@ pwd
 sudo rm -rf update
 sudo rm -rf old
 sudo chmod +x *.sh
-sudo chown -r $USER config/*
+sudo chown -R $USER config/*
 echo "Update Complete!"
 echo ""
 echo "Press Enter To Go Back To Menu"
