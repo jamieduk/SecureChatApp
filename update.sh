@@ -38,19 +38,28 @@ then
     cd $pwd/update
     echo "Current Folder Is "
     pwd
-    git clone https://github.com/$account/$product.git 
-    sleep 5 && cd $product/
+    git clone https://github.com/"$account"/"$product".git && sleep 10
+    cd $product/
     echo "Update Folder Is "
     pwd
-    sudo mv --force config old
-    sudo mv --force old 2>/dev/null
-    sudo mv --force -u ./* $pwd
+    #sudo mv --force config old
+    #sudo mv --force old 2>/dev/null
+    #sudo mv --force -u ./* $pwd
     src="$pwd/update/$product/*" #/
     dest="$pwd"
+    for f in *
+do
+ echo "Tryin to remove old file $pwd/$f"
+ set -o noclobber
+{ > $pwd/$f ; } &> /dev/null
+ sudo rm -f "$pwd/$f"
+ sudo mv --force "$f" "$pwd/$f"
+ # do something on $f
+done
     #sudo tar -cvzpf update.tar.gz $src
-    tar -zcvf update.tar.gz *
+   # tar -zcvf update.tar.gz *
     
-    sudo tar -xvzpf update.tar.gz $dest
+    #sudo tar -xvzpf update.tar.gz $dest
     #
     if [ "$latest_version" -eq $current_version ]
         then
@@ -63,7 +72,7 @@ then
             sudo rm -f $pwd/version.txt
         else
             echo "Failed To Extract Update"
-            sudo rm -rf 1 version.txt.1
+            sudo rm -rf  $pwd/1
     fi
     #
     cd $pwd
