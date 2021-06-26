@@ -18,8 +18,9 @@ latest_version=`cat check.txt`
 echo $latest_version
 latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
-echo $latest_version
-if [ $latest_version -gt $current_version ]
+echo "Latest Version $latest_version"
+echo "Current Version $current_version"
+if [ "$latest_version" -gt "$current_version" ]
 then
     echo "Update Required!"
     echo "Update J~NET Multi Tool 2021"
@@ -47,8 +48,8 @@ then
     sudo rm -rf old
     sudo chmod +x *.sh
     sudo chown -R $USER config/*
-    sudo rm -f version.txt
-    clear
+    sudo rm -f $pwd/version.txt
+    #clear
     echo "Update Complete!"
     echo ""
 else
