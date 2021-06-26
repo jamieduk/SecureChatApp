@@ -5,7 +5,7 @@ echo "$pwd"
 #
 path=$pwd
 cd $path
-account="jamieduk"
+account="$account"
 product="SecureChatApp"
 sudo chown -R $USER $path
 
@@ -17,8 +17,9 @@ then
     git checkout master
     git pull;
 else 
-    #git clone https://github.com/jamieduk/$product.git $product;
-    git clone https://github.com/jamieduk/$product.git $product;
+    #git clone https://github.com/$account/$product.git $product;
+    git clone https://github.com/$account/$product.git $product;
+    cd $product && sudo rm -rf config && cd ..
 fi
 
 echo ""
