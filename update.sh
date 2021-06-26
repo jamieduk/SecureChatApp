@@ -13,14 +13,21 @@ test="https://github.com/$account/$product/raw/main/config/version.txt"
 #update_check=`cat $test`
 pwd=`pwd`
 current_version=`cat config/version.txt`
+echo "Current Version Installed: $current_version"
+#
 wget $test
 # wget https://github.com/jamieduk/SecureChatApp/blob/main/config/version.txt -o check.txt
+# Debug
+echo "Latest Version Available: $latest_version"
+cat version.txt
+# Actual!
 cat version.txt|grep "Version"|sed 's/[^0-9]*//g' > version.txt
 latest_version=`cat version.txt`
-echo $latest_version
+#
+echo ""
 latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
-echo $latest_version
+#echo $latest_version
 if [ "$latest_version" > $current_version ]
 then
     echo "Update Required!"
@@ -44,6 +51,26 @@ then
     sudo rm -f update.tar.gz
     cd $pwd
     echo "Current Folder Is "
+    pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo rm -rf version.txt 1 version.txt.1
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f $pwd/version.txt
+    #clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
+    echo "Attempting Cleanup For Accurate Results Enter Password"
+    sudo rm -rf version.txt 1 version.txt.1
+fi
+
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh   
+
     pwd
     sudo rm -rf update
     sudo rm -rf old
