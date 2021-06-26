@@ -30,6 +30,7 @@ Added compression (x=7)
 Added Key Security for send / recieing secure messages.
 Added Easy Setup Script
 Added More advanced features.
+Added Update Feature!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some Tips:
