@@ -11,6 +11,8 @@ pwd=`pwd`
 echo "Update J~NET Multi Tool 2021"
 sudo mkdir update
 sudo chown -R $USER update
-cd update/SecureChatApp
+cd update
 git clone https://github.com/jamieduk/SecureChatApp.git
-sudo mv -f * $pwd
+cd SecureChatApp
+sudo rm -f config
+sudo mv -f -u * $pwd
