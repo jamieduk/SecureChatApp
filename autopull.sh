@@ -18,5 +18,5 @@ fi
 pwd=`pwd`
 echo "$pwd"
 echo ""
-yes | sudo cp -r /home/$USER/Documents/Scripts/Crypto/nc/Messaging/Secure_Message/Test/SecureChatApp/* $path
+yes | sudo cp -r SecureChatApp/* $path
 
