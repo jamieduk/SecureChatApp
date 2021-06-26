@@ -16,9 +16,9 @@ sudo chown -R $USER update
 cd update
 git clone https://github.com/$account/$product.git
 cd SecureChatApp
-sudo mv -f --ignore-fail-on-non-empty config old
+sudo mv -f config old
 sudo mv -f old 2>/dev/null
-sudo mv -f -u --ignore-fail-on-non-empty * $pwd
+sudo mv -f -u * $pwd
 cd $pwd
 sudo mv -f update 2>/dev/null
 
