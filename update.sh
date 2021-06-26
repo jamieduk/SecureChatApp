@@ -39,7 +39,7 @@ then
     src="$pwd/update/$product/*"
     dest="$pwd"
     sudo tar -cvzpf update.tar.gz $src
-    sudo tar -xvzpf update.tar.gz $dest
+    sudo tar -xvzpf --overwrite update.tar.gz $dest
     sudo rm -f update.tar.gz
     cd $pwd
     echo "Current Folder Is "
