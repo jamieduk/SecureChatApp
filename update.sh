@@ -16,7 +16,7 @@ sudo chown -R $USER update
 cd $pwd/update
 pwd
 git clone https://github.com/$account/$product.git
-cd update/$product/
+cd $pwd/update/$product/
 pwd
 sudo mv --force config old
 sudo mv --force old 2>/dev/null
