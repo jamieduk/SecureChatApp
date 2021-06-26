@@ -86,7 +86,8 @@ else
     echo "Attempting Cleanup For Accurate Results Enter Password"
     sudo rm -rf version.txt 1 version.txt.1
 fi
-
+sudo chown -R $USER *.sh *.txt
+sudo chmod +x *.sh
 echo "Press Enter To Go Back To Menu"
 read Y
 bash menu.sh
