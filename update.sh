@@ -17,12 +17,20 @@ cd $pwd/update
 pwd
 git clone https://github.com/$account/$product.git
 cd $pwd/update/$product/
+echo "Current Folder Is "
 pwd
 sudo mv --force config old
 sudo mv --force old 2>/dev/null
 sudo mv --force -u * $pwd
+src="$pwd/update/$product/*"
+dest="$pwd"
+sudo tar -cvzpf update.tar.gz $src
+sudo tar -xvzpf update.tar.gz $dest
+sudo rm -f update.tar.gz
+
 cd $pwd
 pwd
+echo "Current Folder Is "
 sudo rm -rf update
 sudo rm -rf old
 echo "Update Complete!"
