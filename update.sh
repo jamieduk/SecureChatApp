@@ -18,10 +18,9 @@ wget $test
 cat version.txt|grep "Version"|sed 's/[^0-9]*//g' > version.txt
 latest_version=`cat version.txt`
 echo $latest_version
-
+latest_version=`cat version.txt|grep "<strong>1</strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
-echo "Latest Version $latest_version"
-echo "Current Version $current_version"
+echo $latest_version
 if [ $latest_version > $current_version ]
 then
     echo "Update Required!"
@@ -44,6 +43,24 @@ then
     sudo tar -xvzpf --overwrite update.tar.gz $dest
     sudo rm -f update.tar.gz
     cd $pwd
+    echo "Current Folder Is "
+    pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f $pwd/version.txt
+    #clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
+fi
+
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh   
+
     echo "Current Folder Is "
     pwd
     sudo rm -rf update
