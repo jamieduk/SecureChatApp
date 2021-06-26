@@ -30,7 +30,7 @@ echo ""
 #latest_version=`cat version.txt|grep "<strong>"|sed 's/[^0-9]*//g' `
 #if[$latest_version]
 #echo $latest_version
-if [ "$latest_version" > $Current_ver_test ]
+if [ "$latest_version" > "$Current_ver_test" ]
 then
     echo "Update Required!"
     echo "Update J~NET Multi Tool 2021"
