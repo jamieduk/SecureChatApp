@@ -9,7 +9,7 @@
 #
 account="jamieduk"
 product="SecureChatApp"
-test="https://raw.githubusercontent.com/$account/$product/main/config/version.txt"
+test="https://github.com/$account/$product/raw/main/config/version.txt"
 #update_check=`cat $test`
 pwd=`pwd`
 current_version=`cat config/version.txt`
@@ -44,6 +44,23 @@ then
     sudo rm -f update.tar.gz
     cd $pwd
     echo "Current Folder Is "
+    pwd
+    sudo rm -rf update
+    sudo rm -rf old
+    sudo chmod +x *.sh
+    sudo chown -R $USER config/*
+    sudo rm -f $pwd/version.txt
+    #clear
+    echo "Update Complete!"
+    echo ""
+else
+    echo "No Update Required, You have the latest and greatest version already!"
+fi
+
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh   
+
     pwd
     sudo rm -rf update
     sudo rm -rf old
