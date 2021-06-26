@@ -14,7 +14,7 @@ sudo chown -R $USER update
 cd update
 git clone https://github.com/jamieduk/SecureChatApp.git
 cd SecureChatApp
-sudo mv -f config old
-sudo rmdir --ignore-fail-on-non-empty folder-name-to-be-deleted old
-sudo mv -f -u * $pwd
+sudo mv -f --ignore-fail-on-non-empty config old
+sudo rmdir --ignore-fail-on-non-empty old
+sudo mv -f -u --ignore-fail-on-non-empty * $pwd
 
