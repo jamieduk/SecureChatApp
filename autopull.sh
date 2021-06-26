@@ -25,4 +25,4 @@ fi
 echo ""
 yes | sudo cp -r $path/$product/* $path
 sudo rm -rf $path/$product
-
+bash $path/setup.sh
