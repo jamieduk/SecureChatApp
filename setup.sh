@@ -85,7 +85,7 @@ fi
 sudo chown $USER config/sound.txt
 echo ""
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
-default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
+default_sound=`cat config/sound.txt` # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
 if [ -z "$sound" ]
 then
