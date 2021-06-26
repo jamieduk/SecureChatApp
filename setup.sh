@@ -83,6 +83,7 @@ else
 fi
 #clear
 sudo chown $USER config/sound.txt
+echo ""
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
@@ -101,32 +102,38 @@ cat config/sound.txt
 folder=downloads
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown -R $USER $folder 
+    sudo chown -R $USER $folder
+    echo ""
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
-    sudo chown -R $USER $folder 
+    sudo chown -R $USER $folder
+    echo ""
 fi
 
 folder=sounds
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown -R $USER $folder 
+    sudo chown -R $USER $folder
+    echo ""
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
     sudo chown -R $USER $folder 
+    echo ""
 fi
 
 
 folder=config
 if [ -d "$folder" ]; then
     echo "$folder exists."
-    sudo chown -R $USER $folder 
+    sudo chown -R $USER $folder
+    echo ""
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
     sudo chown -R $USER $folder 
+    echo ""
 fi
 #
 # See who owns this!
@@ -136,10 +143,12 @@ cUSER=$(stat -c '%U' $folder)
 folder=uploads
 if [ -d "$folder" ]; then
     echo "$folder exists."
+    echo ""
 else 
     echo "$folder does not exist."
     sudo mkdir $folder
     sudo chown -R $USER $folder 
+    echo ""
 fi
 
 sudo chown $USER *.*
