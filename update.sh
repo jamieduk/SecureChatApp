@@ -22,5 +22,8 @@ sudo mv --force -u * $pwd
 cd $pwd
 sudo mv --force update 2>/dev/null
 sudo rm -rf update
-
-
+echo "Update Complete!"
+echo ""
+echo "Press Enter To Go Back To Menu"
+read Y
+bash menu.sh
