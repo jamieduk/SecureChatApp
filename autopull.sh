@@ -1,5 +1,9 @@
 #!/bin/bash
-path="/home/$USER/Documents/Scripts/Crypto/nc/Messaging/Secure_Message/Test/"
+
+pwd=`pwd`
+echo "$pwd"
+#
+path=$pwd
 cd $path
 sudo chown -R $USER $path
 
@@ -15,8 +19,6 @@ else
     git clone https://github.com/jamieduk/SecureChatApp.git SecureChatApp;
 fi
 
-pwd=`pwd`
-echo "$pwd"
 echo ""
 yes | sudo cp -r SecureChatApp/* $path
 
