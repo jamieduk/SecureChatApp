@@ -16,10 +16,10 @@ sudo chown -R $USER update
 cd update
 git clone https://github.com/$account/$product.git
 cd SecureChatApp
-sudo mv -f config old
-sudo mv -f old 2>/dev/null
-sudo mv -f -u * $pwd
+sudo mv --force config old
+sudo mv --force old 2>/dev/null
+sudo mv --force -u * $pwd
 cd $pwd
-sudo mv -f update 2>/dev/null
+sudo mv --force update 2>/dev/null
 
 
