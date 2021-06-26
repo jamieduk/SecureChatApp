@@ -17,9 +17,9 @@ cd update
 git clone https://github.com/$account/$product.git
 cd SecureChatApp
 sudo mv -f --ignore-fail-on-non-empty config old
-sudo rm --ignore-fail-on-non-empty old
+sudo mv -f old 2>/dev/null
 sudo mv -f -u --ignore-fail-on-non-empty * $pwd
 cd $pwd
-sudo rm --ignore-fail-on-non-empty update
+sudo mv -f update 2>/dev/null
 
 
