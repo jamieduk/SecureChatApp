@@ -45,20 +45,28 @@ then
     sudo mv --force config old
     sudo mv --force old 2>/dev/null
     sudo mv --force -u * $pwd
-    src="$pwd/update/$product/*"
+    src="$pwd/update/$product*" #/
     dest="$pwd"
     sudo tar -cvzpf update.tar.gz $src
     sudo tar -xvzpf --overwrite update.tar.gz $dest
-    sudo rm -f update.tar.gz
+    #
+    if [ "$latest_version" -eq $current_version ]
+        then
+            sudo rm -f update.tar.gz
+            sudo rm -rf update
+            sudo rm -rf old
+            sudo rm -rf version.txt 1 version.txt.1
+            sudo chmod +x *.sh
+            sudo chown -R $USER config/*
+            sudo rm -f $pwd/version.txt
+        else
+            echo "Failed To Extract Update"
+
+    fi
+    #
     cd $pwd
     echo "Current Folder Is "
-    pwd
-    sudo rm -rf update
-    sudo rm -rf old
-    sudo rm -rf version.txt 1 version.txt.1
-    sudo chmod +x *.sh
-    sudo chown -R $USER config/*
-    sudo rm -f $pwd/version.txt
+    pwd  
     #clear
     echo "Update Complete!"
     echo ""
