@@ -21,4 +21,5 @@ fi
 
 echo ""
 yes | sudo cp -r $path/SecureChatApp/* $path
+sudo rm -rf $path/SecureChatApp
 
