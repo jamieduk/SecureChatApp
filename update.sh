@@ -14,12 +14,15 @@ echo "Update J~NET Multi Tool 2021"
 sudo mkdir update
 sudo chown -R $USER update
 cd $pwd/update
+pwd
 git clone https://github.com/$account/$product.git
 cd update/$product/
+pwd
 sudo mv --force config old
 sudo mv --force old 2>/dev/null
 sudo mv --force -u * $pwd
 cd $pwd
+pwd
 sudo rm -rf update
 sudo rm -rf old
 echo "Update Complete!"
