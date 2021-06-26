@@ -13,4 +13,4 @@ sudo mkdir update
 sudo chown -R $USER update
 cd update
 git clone https://github.com/jamieduk/SecureChatApp.git
-sudo mv -f *.* $pwd
+sudo mv -f ./*. $pwd
