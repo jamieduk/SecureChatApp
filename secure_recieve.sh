@@ -14,7 +14,8 @@ function Atone(){
 aplay $1
 #echo -e "\07"
 }
-
+sudo touch config/rmsg.txt
+sudo chown $USER config/rmsg.txt
 while true;
 do
     echo -en "\e[92m "
@@ -24,8 +25,6 @@ do
     cat config/decrypted.txt
     echo "Waiting For New Message"
     echo ""
-    sudo touch config/rmsg.txt
-    sudo chown $USER config/rmsg.txt
     sudo nc -l -w 550 -p $port > config/rmsg.txt &&
     cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
