@@ -29,7 +29,7 @@ case $n in
 clear
 cat all_messages.txt 
 bash menu.sh ;;
-2) bash secure_recieve.sh ;;
+2) bash secure_recieve_admin.sh ;; # Change to secure_recive.sh to prevent admin commands!
 3) bash secure_send.sh ;;
 4) cal 
 bash menu.sh;;
