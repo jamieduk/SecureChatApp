@@ -22,6 +22,7 @@ echo "10. Update Remote Host IP"
 echo "11. Update Alias"
 echo "12. Repair A Corrupted Message"
 echo "13. Update J~NET Multi Tool 2021"
+echo "14. Help"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
@@ -45,5 +46,6 @@ bash menu.sh;;
 11) bash update_alias.sh;;
 12) bash repair.sh;;
 13) bash update.sh;;
+14) bash help.sh;;
 esac
 
