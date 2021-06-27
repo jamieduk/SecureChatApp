@@ -19,6 +19,8 @@ echo "Edited manually if required!"
 echo ""
 echo "output.txt is the last command recieved file!"
 echo ""
+echo "Added Admin Features and Update Options."
+echo ""
 read -p "Press Enter To Go Back To The Menu..."
 
 
