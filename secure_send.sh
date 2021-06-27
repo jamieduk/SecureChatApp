@@ -37,7 +37,11 @@ done
 echo "Message Sent!, Please Wait 5 Seconds..."
 #
 sleep 5
+clear
+echo "Last Message Sent"
+cat config/msg.txt
 done
+
 trap "sh send.sh; exit;" SIGINT SIGTERM;
 sh send.sh
 
