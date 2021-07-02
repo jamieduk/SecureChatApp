@@ -17,21 +17,37 @@ read -p "Enter Desired Lengh [$num]: " input
 #
 if [ -z "$input" ]
 then
-    final_num=$num
+    final_num="$num"
     echo "You Selected $final_num"
 else
-    final_num=$input
+    final_num="$input"
     echo "You Selected $final_num"
 fi
-
+#
+# check if final_num number higher than 
 #
 echo "Generate Secure Key"
 echo ""
-echo "Generating Strong $final_num Character Key"
+
+echo "Generating Strong $final_num Character Key" #  $num_lengh
 echo ""
+#echo "$final_num"|tr -d '\n' | wc -c"$final_num"
+echo ""
+#echo "$multi Test"
 for ((n=0;n<$lines;n++))
 do 
-    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-$final_num
+    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output1.txt
+    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output2.txt
+    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output3.txt
+    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output4.txt
+    cat output1.txt > final.txt
+    cat output2.txt >> final.txt
+    cat output3.txt >> final.txt
+    cat output4.txt >> final.txt
+    clear
+
+    #cat output.txt | cut -c-$final_num
+head -c $final_num final.txt
 done
 #
 echo ""
