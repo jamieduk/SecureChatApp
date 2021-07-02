@@ -23,6 +23,7 @@ echo "11. Update Alias"
 echo "12. Repair A Corrupted Message"
 echo "13. Update J~NET Multi Tool 2021"
 echo "14. Help"
+echo "15. Generate Strong Key"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
@@ -47,5 +48,6 @@ bash menu.sh;;
 12) bash repair.sh;;
 13) bash update.sh;;
 14) bash help.sh;;
+15) bash generate_key.sh;;
 esac
 
