@@ -96,8 +96,8 @@ echo ""
 output=$(head -c $final_num final.txt)
 echo "$output"
 echo ""
-
-
+echo "Press Enter To Back To menu"
+read Y
 
 done
 #
