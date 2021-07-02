@@ -110,6 +110,7 @@ do
     # Using sed to remove new line cahrs
     tr -d "\n" < final.txt > final2.txt
     clear
+    echo "Generating Strong $final_num Character Key" #  $num_lengh
 
 # Read in only x amount of chars from a text file into a bash var
 echo "Your $final_num Strong Key Is"
