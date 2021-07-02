@@ -102,7 +102,7 @@ do
     clear
 
 # Read in only x amount of chars from a text file into a bash var
-echo "Your Strong Key Is"
+echo "Your $final_num Strong Key Is"
 echo ""
 output=$(head -c $final_num final.txt)
 echo "$output"
