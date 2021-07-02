@@ -10,7 +10,7 @@
 num="64" # Key Lengh!
 lines="1"
 final_num=""
-echo "Linux Bash File & Messenger App (c) J~Net 2021"
+echo "Linux Bash Key Generator App (c) J~Net 2021"
 echo ""
 echo ""
 read -p "Enter Desired Lengh [$num]: " input
