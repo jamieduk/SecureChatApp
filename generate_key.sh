@@ -19,3 +19,6 @@ for ((n=0;n<$lines;n++))
 do 
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-$num
 done
+#
+echo ""
+bash menu.sh
