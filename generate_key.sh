@@ -24,8 +24,17 @@ then
 else
     final_num="$input"
     echo "You Selected $final_num"
+    echo ""
 fi
 #
+if [ "$final_num" -gt "2256" ]; 
+then
+    echo ""
+    echo "2256 Is The Max Lengh So Selecting That"
+    echo ""
+    final_num="2256"
+fi
+
 # check if final_num number higher than 
 #
 echo "Generate Secure Key"
