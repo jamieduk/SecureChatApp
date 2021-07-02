@@ -49,7 +49,7 @@ for ((n=0;n<$lines;n++))
 do 
     dd if=/dev/urandom count=10 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-1000 > output1.txt
     dd if=/dev/urandom count=10 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output2.txt
-    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output3.txt
+    dd if=/dev/urandom count=10 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output3.txt
     dd if=/dev/urandom count=20 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output4.txt
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output5.txt
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output6.txt
@@ -108,6 +108,8 @@ output=$(head -c $final_num final.txt)
 echo "$output"
 echo ""
 echo "Press Enter To Back To menu"
+rm output1.txt output2.txt output3.txt output4.txt output5.txt output6.txt output7.txt output8.txt
+rm output9.txt output10.txt output11.txt output12.txt output13.txt output14.txt final.txt
 read Y
 
 done
