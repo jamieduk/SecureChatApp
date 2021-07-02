@@ -27,12 +27,12 @@ else
     echo ""
 fi
 #
-if [ "$final_num" -gt "2256" ]; 
+if [ "$final_num" -gt "2224" ]; 
 then
     echo ""
-    echo "2256 Is The Max Lengh So Selecting That"
+    echo "2224 Is The Max Lengh So Selecting That"
     echo ""
-    final_num="2256"
+    final_num="2224"
 fi
 
 # check if final_num number higher than 
