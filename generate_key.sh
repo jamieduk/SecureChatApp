@@ -13,7 +13,9 @@ echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 echo "Generate Secure Key"
 echo ""
-echo 'Generating 12-character passwords'
+echo "Generating 12-character passwords"
+echo ""
 for ((n=0;n<$lines;n++))
-do dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-$num
+do 
+    dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-$num
 done
