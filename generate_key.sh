@@ -27,7 +27,7 @@ fi
 #
 echo "Generate Secure Key"
 echo ""
-echo "Generating Strong final_num Character Key"
+echo "Generating Strong $final_num Character Key"
 echo ""
 for ((n=0;n<$lines;n++))
 do 
