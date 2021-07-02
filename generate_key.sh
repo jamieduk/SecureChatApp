@@ -120,7 +120,7 @@ echo "$output"
 echo ""
 echo "Press Enter To Back To menu"
 rm output1.txt output2.txt output3.txt output4.txt output5.txt output6.txt output7.txt output8.txt
-rm output9.txt output10.txt output11.txt output12.txt output13.txt output14.txt final.txt outputlast.txt order.txt final2.txt
+rm output9.txt output10.txt output11.txt output12.txt output13.txt output14.txt final.txt outputlast.txt order.txt final2.txt output.txt output15.txt
 read Y
 
 done
