@@ -33,8 +33,8 @@ Added More advanced features.
 Added Repair Corrupted File Function
 Added Update Feature
 Added Admin features
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added Key Generator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some Tips:
 Check file and folder permissions for user intended for to make sure it works!
@@ -43,9 +43,11 @@ This includes .txt files and .sh files!
 Also open ports (forwarding ports) and firewalls if required for port 776 and 777
 and for remote shell the port is 1234, all these can be changed!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Copy and paste the generated key with ctrl shift c and ctrl shift and v buttons
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Check all files permissions to make sure text files and folders are writable by desired user(s).
 
 * Some Features like repair Corrupted Message Is Experimental!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
