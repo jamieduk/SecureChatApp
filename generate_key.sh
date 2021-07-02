@@ -13,7 +13,7 @@ echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 echo "Generate Secure Key"
 echo ""
-echo "Generating 12-character passwords"
+echo "Generating Strong $num Character Key"
 echo ""
 for ((n=0;n<$lines;n++))
 do 
