@@ -44,7 +44,7 @@ echo "Generating Strong $final_num Character Key" #  $num_lengh
 echo ""
 #echo "$final_num"|tr -d '\n' | wc -c"$final_num"
 echo ""
-#echo "$multi Test"
+#   tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''
 for ((n=0;n<$lines;n++))
 do 
     dd if=/dev/urandom count=10 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-1000 > output1.txt
@@ -62,6 +62,9 @@ do
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output13.txt
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output14.txt
     dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-"$final_num" > output15.txt
+    specail=$(tr -dc '#$%&*+-:=?@[\]_~' </dev/urandom | head -c 5  ; echo)
+   echo $specail > outputlast.txt # A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~
+    #tr -dc A-Za-z0-9 </dev/urandom 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-2 > outputlast.txt
     cat output1.txt > final.txt
     cat output2.txt >> final.txt
     cat output3.txt >> final.txt
@@ -99,17 +102,24 @@ do
     cat output10.txt >> final.txt
     cat output14.txt >> final.txt
     cat output1.txt >> final.txt
+    cat outputlast.txt >> final.txt
+    echo -n "${chars:RANDOM%${#chars}:1}" >> final.txt
+    tac final.txt > order.txt
+    cat order.txt > final.txt
+    tr --delete '\n' < final.txt
+    # Using sed to remove new line cahrs
+    tr -d "\n" < final.txt > final2.txt
     clear
 
 # Read in only x amount of chars from a text file into a bash var
 echo "Your $final_num Strong Key Is"
 echo ""
-output=$(head -c $final_num final.txt)
+output=$(head -c $final_num final2.txt) # head
 echo "$output"
 echo ""
 echo "Press Enter To Back To menu"
 rm output1.txt output2.txt output3.txt output4.txt output5.txt output6.txt output7.txt output8.txt
-rm output9.txt output10.txt output11.txt output12.txt output13.txt output14.txt final.txt
+rm output9.txt output10.txt output11.txt output12.txt output13.txt output14.txt final.txt outputlast.txt order.txt final2.txt
 read Y
 
 done
