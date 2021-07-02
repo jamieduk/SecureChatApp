@@ -12,6 +12,8 @@ lines="1"
 final_num=""
 echo "Linux Bash Key Generator App (c) J~Net 2021"
 echo ""
+echo "This Can Go Up To 2256 key Lengh!"
+echo "However Some Programs Have Limits"
 echo ""
 read -p "Enter Desired Lengh [$num]: " input
 #
