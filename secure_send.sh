@@ -9,10 +9,18 @@ echo "Enter Key"
 read -s key
 host_ip=`cat config/remote_host.txt`
 alias=`cat config/alias.txt`
+if test -z "$key" 
+then
+      key_icon="🔓 No Key"
+else
+      key_icon="🔒"
+fi
 echo "Remote Host IP $host_ip"
 while true;
 do
 #
+echo "$key_icon"
+echo ""
 input="$@"
 if [ -z "$*" ]; then 
     echo "Enter Text To Send: "

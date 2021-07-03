@@ -9,6 +9,13 @@ echo "Enter Key"
 read -s key
 lport=777
 host_ip=`cat config/remote_host.txt`
+#
+if test -z "$key" 
+then
+      key_icon="🔓 No Key"
+else
+      key_icon="🔒"
+fi
 sound=`cat config/sound.txt`
 function Atone(){
 aplay $1
@@ -35,7 +42,8 @@ echo "${$valuec}" | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2
 while true;
 do
     echo -en "\e[92m "
-    #clear
+    echo "$key_icon"
+    echo ""
     echo "Previous Message: "
     echo ""
     cat config/decrypted.txt
