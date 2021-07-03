@@ -14,7 +14,7 @@ if test -z "$key"
 then
       key_icon="🔓 No Key"
 else
-      key_icon="🔒 Key Good"
+      key_icon="🔒 Locked!"
 fi
 sound=`cat config/sound.txt`
 function Atone(){
