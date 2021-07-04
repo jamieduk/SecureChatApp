@@ -23,7 +23,7 @@ echo "$key_icon"
 echo ""
 input="$@"
 if [ -z "$*" ]; then 
-    echo "Enter Text To Send: "
+    echo "Enter Text To Send: Or type #quit"
     read input; 
 fi
 #
