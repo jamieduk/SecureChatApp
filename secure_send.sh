@@ -15,7 +15,7 @@ then
 else
       key_icon="🔒 Locked!"
 fi
-echo "Remote Host IP $host_ip To quit type #quit"
+echo "Remote Host IP $host_ip Or type #quit"
 while true;
 do
 #
