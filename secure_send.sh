@@ -13,7 +13,7 @@ if test -z "$key"
 then
       key_icon="🔓 No Key"
 else
-      key_icon="🔒"
+      key_icon="🔒 Locked!"
 fi
 echo "Remote Host IP $host_ip"
 while true;
@@ -25,6 +25,11 @@ input="$@"
 if [ -z "$*" ]; then 
     echo "Enter Text To Send: "
     read input; 
+fi
+#
+if [[ $input = *#quit* ]];
+then 
+    exit ;
 fi
 #
 echo "$alias: $input" > config/msg.txt
