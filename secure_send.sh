@@ -15,7 +15,7 @@ then
 else
       key_icon="🔒 Locked!"
 fi
-echo "Remote Host IP $host_ip"
+echo "Remote Host IP $host_ip To quit type #quit"
 while true;
 do
 #
@@ -37,11 +37,13 @@ Edata=$(cat config/msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf
 echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
+clear
 count=0
 total=34
 pstr="[=======================================================================]"
 
-while [ $count -lt $total ]; do
+while [ $count -lt $total ]; 
+do
   sleep 0.006
   count=$(( $count + 1 ))
   pd=$(( $count * 73 / $total ))
