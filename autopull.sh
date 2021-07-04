@@ -26,6 +26,5 @@ echo ""
 yes | sudo cp -r $path/$product/* $path
 sudo rm -rf $path/$product
 sudo chown $USER $path/*
-sudo chown $USER $path/config/*
 sudo chmod +x $path/*.sh
 bash $path/setup.sh

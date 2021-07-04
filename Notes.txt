@@ -34,6 +34,7 @@ Added Repair Corrupted File Function
 Added Update Feature
 Added Admin features
 Added Key Generator
+Added Lock Symbol so you know when a key is in use or not!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some Tips:

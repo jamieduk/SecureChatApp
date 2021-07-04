@@ -158,7 +158,7 @@ placeholder=`pwd`
 sudo chown -R $USER: config downloads uploads
 sudo chmod +x *.sh*
 cd $placeholder
-sudo chown $USER config/*
+sudo chown $USER config/all_messages.txt
 
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"

@@ -14,7 +14,13 @@ echo "Binary Server AKA SENDER"
 clear
 echo "Enter Secure Password"
 read password
-echo -en "\e[92mPlease Wait \c"
+if test -z "$password" 
+then
+      key_icon="🔓 No Key"
+else
+      key_icon="🔒 Locked!"
+fi
+echo -en "\e[92mPlease Wait $key_icon\c"
 #sudo cat uploads/file.zip | nc -w 1 $host_ip 777
 #sudo cp $input uploads/
 # gzip -8 -c $input > uploads/file.gz
