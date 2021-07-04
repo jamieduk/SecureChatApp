@@ -51,4 +51,6 @@ Check all files permissions to make sure text files and folders are writable by 
 
 * Some Features like repair Corrupted Message Is Experimental!
 
+* Using upload file function works with relative paths so the folder containing the app is where to put files to be uploaded and inside the file sender the filename of file in that folder, the files will be encrypted with the key you give, the encrypted file lives in uploads folder and will be replaced when a new file gets sent, on the other end the recieving side will store downloaded files in the downloads folder.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
