@@ -116,7 +116,8 @@ do
 echo "Your $final_num Strong Key Is"
 echo ""
 output=$(head -c $final_num final2.txt) # head
-echo "$output"
+echo "$output"| sed 's/./&\n/g' | shuf | tr -d "\n"
+echo ""
 echo ""
 echo "Press Enter To Back To menu"
 rm output1.txt output2.txt output3.txt output4.txt output5.txt output6.txt output7.txt output8.txt
