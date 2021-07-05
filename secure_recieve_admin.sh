@@ -46,6 +46,26 @@ cmd_out_req=${arrIN[2]}
 #cmd_out_req=${arrIN[2]}
 echo "Reqesting Admin $cmd_out"
 echo "Requested Command $cmd_out_req"
+admin_list="config/admins.txt"
+if test -f "$admin_list";
+then
+    echo "$admin_list exists."
+
+    if grep -q $cmd_out "$File";
+    then
+        #  Some Actions # $string was found
+        echo "Admin Authenticated"
+    else
+        echo "Not A Valid Admin"
+fi
+
+else 
+    touch config/admins.txt
+        
+fi
+
+
+
 }
 while true;
 do
