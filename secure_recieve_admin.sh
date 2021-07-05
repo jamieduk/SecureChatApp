@@ -63,6 +63,7 @@ then
     then
         #  Some Actions # $string was found
         echo "Admin Authenticated"
+        # Running Command Code Goes Here!
     else
         echo "Not A Valid Admin"
 fi
