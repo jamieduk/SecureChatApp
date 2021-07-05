@@ -59,11 +59,14 @@ if test -f "$admin_file";
 then
     echo "$admin_file exists."
     
-    if grep -q $cmd_out "$admin_file";
+    if grep -q $cmd_out "$admin_file"; # Where cmd_out is admin alias name!
     then
         #  Some Actions # $string was found
         echo "Admin Authenticated"
         # Running Command Code Goes Here!
+        output=$($cmd_out_req)
+        echo $output > remote/output.txt
+        cat remote/output.txt
     else
         echo "Not A Valid Admin"
 fi
