@@ -23,6 +23,7 @@ echo "12. Repair A Corrupted Message"
 echo "13. Update J~NET Multi Tool 2021"
 echo "14. Help"
 echo "15. Generate Strong Key"
+echo "16. Connect To Secure Multi-Chat"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
