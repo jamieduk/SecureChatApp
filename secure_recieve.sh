@@ -8,6 +8,12 @@
 port=776
 echo "Enter Key"
 read -s key
+if test -z "$key" 
+then
+      key_icon="🔓 No Key"
+else
+      key_icon="🔒 Locked!"
+fi
 host_ip=`cat config/remote_host.txt`
 sound=`cat config/sound.txt`
 function Atone(){
@@ -19,6 +25,7 @@ sudo chown $USER config/rmsg.txt
 while true;
 do
     echo -en "\e[92m "
+    echo "$key_icon"
     #clear
     echo "Previous Message: "
     echo ""
