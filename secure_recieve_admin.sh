@@ -36,8 +36,16 @@ localip=`cat config/ip.txt`
 #while ! echo exit | sudo nc -l -p $port > config/rmsg.txt 13; do sleep 10; done
 valuec=`cat config/rmsg.txt`
 #decode:
-echo "${$valuec}" | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2
-#echo $valuec
+echo "$valuec" | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > cmd.txt
+cat cmd.txt
+IN=`cat cmd.txt`
+delim=":"
+arrIN=(${IN//$delim/ })
+cmd_out=${arrIN[0]}
+cmd_out_req=${arrIN[2]}
+#cmd_out_req=${arrIN[2]}
+echo "Reqesting Admin $cmd_out"
+echo "Requested Command $cmd_out_req"
 }
 while true;
 do
