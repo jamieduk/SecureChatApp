@@ -5,9 +5,8 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-echo -en "\e[92m "
+echo -en "\e[92mWelcome To J~Net Menu"
 echo ""
-echo "Welcome To J~Net Menu"
 echo ""
 echo "1. Show All Messages"
 echo "2. Recieve Message" 
@@ -49,5 +48,6 @@ bash menu.sh;;
 13) bash update.sh;;
 14) bash help.sh;;
 15) bash generate_key.sh;;
+16) bash MultiChat.sh;;
 esac
 
