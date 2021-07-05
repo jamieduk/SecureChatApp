@@ -160,6 +160,13 @@ sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
 
+# Setting up Admins
+echo "Setting Up Your Admin Account Name"
+echo "What Alias you want to accept admin comands from remotely?"
+read admin
+echo "$admin" > config/admins.txt
+echo "OK Admin Added to admins file found in config/admins.txt"
+
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y
