@@ -37,6 +37,12 @@ Added Key Generator
 Added Lock Symbol so you know when a key is in use or not!
 Added Send to multiple hosts at the same time
 Added MultiChat Menu Option for ssh-chat server
+*   Update Host IP Option now appends so that you can send to multiple hosts with 1 send, a new option will be able to replace the host list with just 1 ip with a new option called replace host ip On Option 17
+
+
+Please Note The Notes files and any other file can be updated on gihub at any time and the update feature is experimental but should work, try updating and if it fails please just delete SecureChatApp folder and re download from github using the same original git clone command
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some Tips:
