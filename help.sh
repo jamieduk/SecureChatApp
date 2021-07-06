@@ -5,20 +5,26 @@
 #
 echo "Welcome To The Secure Message App 2021 Help Page"
 echo "J~Net"|figlet
-echo "1) Show All Messages"
-echo "2) Recieve Message From Remote Location"
-echo "3) Send Message For Sending Secure Text To Remote Location"
-echo "4) Calendar"
-echo "5) Recieve File From Remote Location"
-echo "6) Send File To Remote Location"
-echo "7) Setup This App"
-echo "8) View Downloaded File"
-echo "9) Remote Shell"
-echo "10) Update Remote Host IP"
-echo "11) Update Alias"
-echo "12) Repair A Corrupted Message"
-echo "13) Update J~NET Multi Tool 2021"
-echo "14) Help"
+echo """
+1. Show All Messages
+2. Recieve Message
+3. Send Message
+4. Calendar
+5. Recieve File
+6. Send File
+7. Setup
+8. View Downloaded File
+9. Remote Shell
+10. Update Alias
+11. Repair A Corrupted Message
+12. Update J~NET Multi Tool 2021
+13. Help
+14. Generate Strong Key
+15. Connect To Secure Multi-Chat
+16. Update Remote Host IP (Add To It)
+17. Replace Remote Host IP List
+Enter your choice: (Anything else to exit)
+"""
 echo "Press Enter For More"
 read Y
 echo "Tip: For Security, The KEY is NEVER stored on the hard drive and will be"
