@@ -30,7 +30,8 @@ read n
 case $n in
 1)
 clear
-cat config/all_messages.txt 
+cat config/all_messages.txt | less && bash menu.sh
+
 bash menu.sh ;;
 2) bash secure_recieve_admin.sh ;; # Change to secure_recive.sh to prevent admin commands!
 3) bash secure_send.sh ;;
