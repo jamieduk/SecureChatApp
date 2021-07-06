@@ -150,7 +150,7 @@ else
     sudo chown -R $USER $folder 
     echo ""
 fi
-
+#
 sudo chown $USER *.*
 echo "Setting File Permissions..."
 placeholder=`pwd`
@@ -159,10 +159,11 @@ sudo chown -R $USER: config downloads uploads
 sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
-
+#
 # Setting up Admins
 echo "Setting Up Your Admin Account Name"
-echo "What Alias you want to accept admin commands from remotely? (Leave blank for none!)"
+echo "What Alias you want to accept admin commands from remotely?"
+echo "* Have an Admin Alias and dont share publicy)!"
 read admin
 echo "$admin" > config/admins.txt
 echo "OK Admin Added to admins file found in config/admins.txt"
