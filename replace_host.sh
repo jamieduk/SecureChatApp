@@ -18,5 +18,16 @@ if [ "$#" -eq  "0" ]
 else
     ip=$1
 fi
-echo "$ip" > config/remote_host.txt
+
+
+echo "Happy With $ip?"
+read -r -p "[y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    echo "$ip" > config/remote_host.txt
+else
+    exit
+fi
+
+
 bash menu.sh
