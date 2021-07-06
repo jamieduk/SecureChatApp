@@ -17,13 +17,13 @@ echo "6. Send File"
 echo "7. Setup"
 echo "8. View Downloaded File"
 echo "9. Remote Shell"
-echo "10. Update Remote Host IP (Add To It)"
-echo "11. Update Alias"
-echo "12. Repair A Corrupted Message"
-echo "13. Update J~NET Multi Tool 2021"
-echo "14. Help"
-echo "15. Generate Strong Key"
-echo "16. Connect To Secure Multi-Chat"
+echo "10. Update Alias"
+echo "11. Repair A Corrupted Message"
+echo "12. Update J~NET Multi Tool 2021"
+echo "13. Help"
+echo "14. Generate Strong Key"
+echo "15. Connect To Secure Multi-Chat"
+echo "16. Update Remote Host IP (Add To It)"
 echo "17. Replace Remote Host IP List"
 echo "Enter your choice: (Anything else to exit)" 
 read n
@@ -44,13 +44,13 @@ bash menu.sh;;
 7) bash setup.sh;;
 8) bash view_file.sh;;
 9) cd remote && bash menu.sh;;
-10) bash update_host.sh;;
-11) bash update_alias.sh;;
-12) bash repair.sh;;
-13) bash update.sh;;
-14) bash help.sh;;
-15) bash generate_key.sh;;
-16) bash MultiChat.sh;;
+10) bash update_alias.sh;;
+11) bash repair.sh;;
+12) bash update.sh;;
+13) bash help.sh;;
+14) bash generate_key.sh;;
+15) bash MultiChat.sh;;
+16) bash update_host.sh;;
 17) bash replace_host.sh;;
 esac
 
