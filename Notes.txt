@@ -35,6 +35,8 @@ Added Update Feature
 Added Admin features
 Added Key Generator
 Added Lock Symbol so you know when a key is in use or not!
+Added Send to multiple hosts at the same time
+Added MultiChat Menu Option for ssh-chat server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some Tips:
