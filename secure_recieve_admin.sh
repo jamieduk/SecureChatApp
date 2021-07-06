@@ -18,7 +18,7 @@ else
 fi
 sound=`cat config/sound.txt`
 function Atone(){
-aplay $1
+aplay -q $1
 #echo -e "\07"
 }
 
@@ -72,11 +72,14 @@ then
 fi
 
 else 
-    touch config/admins.txt
+    # Setting up Admins
+    echo "Setting Up Your Admin Account Name"
+    echo "What Alias you want to accept admin commands from remotely? (Leave blank for none!)"
+    read admin
+    echo "$admin" > config/admins.txt
+    echo "OK Admin Added to admins file found in config/admins.txt"
         
 fi
-
-
 
 }
 while true;

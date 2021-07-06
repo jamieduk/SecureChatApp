@@ -17,7 +17,7 @@ fi
 host_ip=`cat config/remote_host.txt`
 sound=`cat config/sound.txt`
 function Atone(){
-aplay $1
+aplay -q $1
 #echo -e "\07"
 }
 sudo touch config/rmsg.txt
