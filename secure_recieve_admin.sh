@@ -95,12 +95,8 @@ do
     sudo nc -l -w 550 -p 776 > config/rmsg.txt &&
     cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
-    sleep 0.006 # this is work
-#echo "All Done!"
-#echo -en"\e[94m \c"
-   # #clear
-# bash synth.sh
-   # cat decrypted.txt
+    sleep 0.006
+
     cat config/decrypted.txt >> config/all_messages.txt
     Atone $sound
     data=`cat config/decrypted.txt`
@@ -123,7 +119,7 @@ do
         else
           echo $data
         fi
-    echo -en "\e[70m \c"
+    #echo -en "\e[70m \c"
     sleep 5
 #bash recieve.sh
 done

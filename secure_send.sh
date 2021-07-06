@@ -31,21 +31,15 @@ then
     read input; 
 fi
 #
-if [[ -z "$input" ]];
-then
-    echo -e "${RED}PLEASE NO EMPTY MESSAGES!"
+while ! [ "$input" ];
+do
+    echo -e "${RED}Warning!"
+    echo -e "${YELLOW}PLEASE NO EMPTY MESSAGES!"
     echo ""
     echo "Enter Text To Send: Or type #quit"
     read input; 
-fi
-#
-if [[ -z "$input" ]];
-then
-    echo -e "${RED}Warning!"
-    echo -e "${YELLOW}NO EMPTY MESSAGES!"
-    echo "Will Now Auto #quit"
-    exit
-fi
+done
+
 #
 echo -en "\e[92m"
 if [[ $input = *#quit* ]];
