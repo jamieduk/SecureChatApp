@@ -5,6 +5,13 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+echo "Welcome To Recieve A Message"
+echo "You will need port 776 open in your firewall and router port fowarding rules setup!"
+echo ""
+echo "If asked about an admin alias, create one and dont share it with anyone else for security"
+echo "Unless you TRUST them!"
+echo ""
+echo ""
 echo "Enter Key"
 read -s key
 lport=777
@@ -92,7 +99,7 @@ do
     cat config/decrypted.txt
     echo "Waiting For New Message"
     echo ""
-    sudo nc -l -w 550 -p 776 > config/rmsg.txt &&
+    sudo nc -l -w 550 -v -p 776 > config/rmsg.txt &&
     cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
     sleep 0.006
