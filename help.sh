@@ -11,8 +11,6 @@ echo """
 3. Send Message             Send a message to all hosts
 4. Calendar                 Calender!
 5. Recieve File             Set To Recieve A File (enable the port in your fw and router)
-"""
-echo """
 6. Send File                Sends file to 1 host so use replace host option if required!
 7. Setup                    Sets up everything this needs to work!
 8. View Downloaded File     View Downloaded File(s)! upload and download directory required for this!
