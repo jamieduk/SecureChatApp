@@ -58,6 +58,16 @@ else
     sudo apt install -y p7zip-rar
 fi
 
+FILE=/usr/bin/dig
+if [ -f "$FILE" ]; then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    echo "Setting up Dig"
+    echo ""
+    sudo apt install -y dig
+fi
+
 FILE=/usr/bin/aplay
 if [ -f "$FILE" ]; then
     echo "$FILE Already Installed."
