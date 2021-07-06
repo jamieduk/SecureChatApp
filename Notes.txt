@@ -39,6 +39,32 @@ Added Send to multiple hosts at the same time
 Added MultiChat Menu Option for ssh-chat server
 *   Update Host IP Option now appends so that you can send to multiple hosts with 1 send, a new option will be able to replace the host list with just 1 ip with a new option called replace host ip On Option 17
 
+* can now send to multiple hosts at the same time, you can update or replace host list easy with new added menu options, see options 10 and 
+
+* Added
+*** Extra Security combinging your username:ip in admins file! see in admin alias specificy alias@ip
+* This locks it down to only 1 ip that can accept admin commands from and the alias has to match.
+
+1. Show All Messages
+2. Recieve Message
+3. Send Message
+4. Calendar
+5. Recieve File
+6. Send File
+7. Setup
+8. View Downloaded File
+9. Remote Shell
+
+10. Update Alias
+11. Repair A Corrupted Message
+12. Update J~NET Multi Tool 2021
+13. Help
+14. Generate Strong Key
+15. Connect To Secure Multi-Chat
+16. Update Remote Host IP
+17. Replace Remote Host IP List
+
+
 
 Please Note The Notes files and any other file can be updated on gihub at any time and the update feature is experimental but should work, try updating and if it fails please just delete SecureChatApp folder and re download from github using the same original git clone command
 
