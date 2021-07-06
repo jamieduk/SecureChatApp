@@ -17,8 +17,8 @@ else
     ip=$1
 fi
 #
-echo "$ip" > config/remote_host.txt
-echo "New Remote IP Set To "
+echo "$ip" >> config/remote_host.txt
+echo "Add New Remote Remote IP"
 cat config/remote_host.txt
 echo "Press Enter To Go Back To Menu"
 read Y
