@@ -5,6 +5,9 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+RED="\e[31m"
+GREEN="\e[92m"
+YELLOW="\e[33m"
 echo "Enter Key"
 read -s key
 host_ip=`cat config/remote_host.txt`
@@ -23,23 +26,23 @@ echo "$key_icon"
 echo ""
 input="$@"
 if [ -z "$*" ];
-then 
+then
+    echo -e "${GREEN}Enter Text To Send: Or type #quit"
+    read input; 
+fi
+#
+if [[ -z "$input" ]];
+then
+    echo -e "${RED}PLEASE NO EMPTY MESSAGES!"
+    echo ""
     echo "Enter Text To Send: Or type #quit"
     read input; 
 fi
 #
 if [[ -z "$input" ]];
 then
-    echo -e "\e[32mWarning!"
-    echo "PLEASE NO EMPTY MESSAGES!"
-    echo "Enter Text To Send: Or type #quit"
-    read input; 
-fi
-#
-if [[ -z "$input" ]];
-then
-    echo -e "\e[32mWarning!"
-    echo "NO EMPTY MESSAGES!"
+    echo -e "${RED}Warning!"
+    echo -e "${YELLOW}NO EMPTY MESSAGES!"
     echo "Will Now Auto #quit"
     exit
 fi
