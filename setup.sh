@@ -164,7 +164,16 @@ sudo chown $USER config/all_messages.txt
 echo "Setting Up Your Admin Account Name"
 echo "What Alias you want to accept admin commands from remotely?"
 echo "* Have an Admin Alias and dont share publicy)!"
-read admin
+default_admin="Admin"
+#
+read -p "Enter Sound File [$default_admin]: " admin
+if [ -z "$admin" ]
+then
+      admin=$default_admin
+else
+      echo "Admin Alias : $admin You can always edit manually in config/admins.txt)"
+fi
+
 echo "$admin" > config/admins.txt
 echo "OK Admin Added to admins file found in config/admins.txt"
 
