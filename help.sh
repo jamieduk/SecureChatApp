@@ -6,23 +6,25 @@
 echo "Welcome To The Secure Message App 2021 Help Page"
 echo "J~Net"|figlet
 echo """
-1. Show All Messages
-2. Recieve Message
-3. Send Message
-4. Calendar
-5. Recieve File
-6. Send File
-7. Setup
-8. View Downloaded File
-9. Remote Shell
-10. Update Alias
-11. Repair A Corrupted Message
-12. Update J~NET Multi Tool 2021
-13. Help
-14. Generate Strong Key
-15. Connect To Secure Multi-Chat
-16. Update Remote Host IP (Add To It)
-17. Replace Remote Host IP List
+1. Show All Messages        Shows all messages
+2. Recieve Message          Set To Recieve A Message
+3. Send Message             Send a message to all hosts
+4. Calendar                 Calender!
+5. Recieve File             Set To Recieve A File (enable the port in your fw and router)
+"""
+echo """
+6. Send File                Sends file to 1 host so use replace host option if required!
+7. Setup                    Sets up everything this needs to work!
+8. View Downloaded File     View Downloaded File(s)! upload and download directory required for this!
+9. Remote Shell             Remote Shell (Previous Method)
+10. Update Alias            Update Your Alias
+11. Repair Corrupted Message Attempts to recover bad decrypted data with the correct key! (experimental)!
+12. Update J~NET Multi Tool 2021 Attempts to update This App if it fails just delete the SecureChatApp Folder
+13. Help                    This Page!
+14. Generate Strong Key     Generate A Strong Key
+15. Connect To Secure Multi-Chat aka J~Net ssh-chat
+16. Update Remote Host IP (Add To It) Add a host to remote hosts!
+17. Replace Remote Host IP List For sending to just 1 host only!
 Enter your choice: (Anything else to exit)
 """
 echo "Press Enter For More"
