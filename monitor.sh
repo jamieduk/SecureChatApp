@@ -9,6 +9,7 @@
 #
 #
 defaultport=776
+
 if [ -z "$1" ];
 then
 # read -p "Enter Port To Monitor [$default_port]: " port
@@ -17,6 +18,8 @@ then
 else 
     port=$1
 fi
+echo -en "\e[92mWelcome To J~Net Port Monitor"
+
 # output after you start listening to same port.
 watch -n1 "sudo netstat -anp | grep $port" # >> log.txt && cat log.txt
 bash menu.sh
