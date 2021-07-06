@@ -22,9 +22,24 @@ do
 echo "$key_icon"
 echo ""
 input="$@"
-if [ -z "$*" ]; then 
+if [ -z "$*" ];
+then 
     echo "Enter Text To Send: Or type #quit"
     read input; 
+fi
+#
+if [[ -z "$input" ]];
+then
+    echo "PLEASE NO EMPTY MESSAGES!"
+    echo "Enter Text To Send: Or type #quit"
+    read input; 
+fi
+#
+if [[ -z "$input" ]];
+then
+    echo "NO EMPTY MESSAGES!"
+    echo "Will Now Auto #quit"
+    exit
 fi
 #
 if [[ $input = *#quit* ]];
