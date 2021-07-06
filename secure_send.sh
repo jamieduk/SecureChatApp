@@ -30,6 +30,7 @@ fi
 #
 if [[ -z "$input" ]];
 then
+    echo -e "\e[32mWarning!"
     echo "PLEASE NO EMPTY MESSAGES!"
     echo "Enter Text To Send: Or type #quit"
     read input; 
@@ -37,11 +38,13 @@ fi
 #
 if [[ -z "$input" ]];
 then
+    echo -e "\e[32mWarning!"
     echo "NO EMPTY MESSAGES!"
     echo "Will Now Auto #quit"
     exit
 fi
 #
+echo -en "\e[92m"
 if [[ $input = *#quit* ]];
 then 
     exit ;
