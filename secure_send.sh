@@ -10,7 +10,9 @@ GREEN="\e[92m"
 YELLOW="\e[33m"
 echo "Enter Key"
 read -s key
-host_ip=`cat config/remote_host.txt`
+#host_ip=`cat config/remote_host.txt`
+readarray -t host_ip < config/remote_host.txt
+
 alias=`cat config/alias.txt`
 if test -z "$key" 
 then
@@ -51,7 +53,13 @@ echo "$alias: $input" > config/msg.txt
 Edata=$(cat config/msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
-echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
+for i in "${host_ip[@]}"
+do
+   echo $Edata | nc $i 776 & sleep 1 ; kill $!
+   # or do whatever with individual element of the ipaddray
+done
+
+# echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
 clear
 count=0
 total=34
