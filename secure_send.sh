@@ -12,7 +12,8 @@ echo "Enter Key"
 read -s key
 #host_ip=`cat config/remote_host.txt`
 readarray -t host_ip < config/remote_host.txt
-
+dig @resolver4.opendns.com myip.opendns.com +short > config/ip.txt
+local_ip=`cat config/ip.txt`
 alias=`cat config/alias.txt`
 if test -z "$key" 
 then
@@ -49,7 +50,7 @@ then
     exit ;
 fi
 #
-echo "$alias: $input" > config/msg.txt
+echo "$alias@$local_ip: $input" > config/msg.txt
 Edata=$(cat config/msg.txt | openssl enc -e -des3 -base64 -pass pass:$key -pbkdf2)
 echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
