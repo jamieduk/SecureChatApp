@@ -19,7 +19,6 @@ else
     ip=$1
 fi
 
-
 echo "Happy With $ip?"
 read -r -p "[y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
@@ -28,6 +27,5 @@ then
 else
     exit
 fi
-
 
 bash menu.sh
