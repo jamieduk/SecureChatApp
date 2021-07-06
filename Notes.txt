@@ -89,6 +89,10 @@ Check all files permissions to make sure text files and folders are writable by 
 
 Want a windows equivalint?
 Get netcat for windows and rename the exe to nc instead of netcat it might work try it!
+
+https://joncraton.org/files/nc111nt.zip
+
+
 https://superuser.com/questions/14501/are-there-netcat-like-tools-for-windows-which-are-not-quarantined-as-malware/230797
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
