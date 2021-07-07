@@ -12,7 +12,7 @@ echo ""
 #
 sudo apt install -y ucspi-tcp dig
 sudo chmod +x StickyChat/*.sh
-#
+sudo chmod +x remote/*.sh
 #
 sudo touch config/remote_host.txt
 sudo touch config/alias.txt
@@ -121,7 +121,8 @@ echo "Sound Set To "
 cat config/sound.txt
 
 folder=downloads
-if [ -d "$folder" ]; then
+if [ -d "$folder" ];
+then
     echo "$folder exists."
     sudo chown -R $USER $folder
     echo ""
@@ -162,8 +163,10 @@ cUSER=$(stat -c '%U' $folder)
 #echo $cUSER
 
 folder=uploads
-if [ -d "$folder" ]; then
+if [ -d "$folder" ];
+then
     echo "$folder exists."
+    sudo chown -R $USER $folder 
     echo ""
 else 
     echo "$folder does not exist."
