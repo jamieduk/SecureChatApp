@@ -68,6 +68,13 @@ else
     sudo apt install -y dig
 fi
 
+if [ -f /usr/bin/socat ];
+then
+    sudo apt install -y socat
+else 
+    echo "Socat Already Installed!"
+fi
+
 FILE=/usr/bin/aplay
 if [ -f "$FILE" ]; then
     echo "$FILE Already Installed."
@@ -186,7 +193,7 @@ fi
 
 echo "$admin" > config/admins.txt
 echo "OK Admin Added to admins file found in config/admins.txt"
-
+#
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y
