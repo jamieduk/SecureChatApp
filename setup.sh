@@ -10,6 +10,10 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 #
+sudo apt install -y ucspi-tcp dig
+sudo chmod +x StickyChat/*.sh
+#
+#
 sudo touch config/remote_host.txt
 sudo touch config/alias.txt
 sudo touch config/all_messages.txt
