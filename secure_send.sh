@@ -81,6 +81,6 @@ echo "Last Message Sent"
 cat config/msg.txt
 done
 
-trap "sh send.sh; exit;" SIGINT SIGTERM;
+trap "sh secure_send.sh; exit;" SIGINT SIGTERM;
 sh send.sh
 
