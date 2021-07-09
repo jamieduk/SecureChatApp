@@ -10,7 +10,8 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 #
-sudo apt install -y ucspi-tcp dig
+sudo apt install -y dig
+sudo apt install -y ucspi-tcp
 sudo chmod +x StickyChat/*.sh
 sudo chmod +x remote/*.sh
 #
@@ -176,10 +177,11 @@ else
 fi
 #
 sudo chown $USER *.*
+sudo chown -R $USER config downloads uploads
 echo "Setting File Permissions..."
 placeholder=`pwd`
 #cd config
-sudo chown -R $USER: config downloads uploads
+
 sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
@@ -190,7 +192,7 @@ echo "What Alias you want to accept admin commands from remotely?"
 echo "* Have an Admin Alias and dont share publicy)!"
 default_admin="Admin"
 #
-read -p "Enter Sound File [$default_admin]: " admin
+read -p "Enter Admin Alias [$default_admin]: " admin
 if [ -z "$admin" ]
 then
       admin=$default_admin
