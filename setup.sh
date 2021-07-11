@@ -190,6 +190,7 @@ sudo chown $USER config/all_messages.txt
 echo "Setting Up Your Admin Account Name"
 echo "What Alias you want to accept admin commands from remotely?"
 echo "* Have an Admin Alias and dont share publicy)!"
+
 default_admin="Admin"
 #
 read -p "Enter Admin Alias [$default_admin]: " admin
@@ -199,8 +200,10 @@ then
 else
       echo "Admin Alias : $admin You can always edit manually in config/admins.txt)"
 fi
-
-echo "$admin" > config/admins.txt
+#
+dig @resolver4.opendns.com myip.opendns.com +short > config/ip.txt
+local_ip=`cat config/ip.txt`
+echo "$admin@$local_ip" > config/admins.txt
 echo "OK Admin Added to admins file found in config/admins.txt"
 #
 echo "Setup Complete, Returning to menu..."
