@@ -124,7 +124,7 @@ echo ""
 echo "Choose Wav File For Alert Tone! (Or leave as is)"
 default_sound="sounds/notification.wav" # /usr/share/sounds/linuxmint-login.wav
 read -p "Enter Sound File [$default_sound]: " sound
-if [ -z "$sound" ]
+if [ -z "$sound" ];
 then
       sound=$default_sound
 else
@@ -150,7 +150,8 @@ else
 fi
 
 folder=sounds
-if [ -d "$folder" ]; then
+if [ -d "$folder" ];
+then
     echo "$folder exists."
     sudo chown -R $USER $folder
     echo ""
@@ -163,7 +164,8 @@ fi
 
 
 folder=config
-if [ -d "$folder" ]; then
+if [ -d "$folder" ];
+then
     echo "$folder exists."
     sudo chown -R $USER $folder
     echo ""
@@ -204,7 +206,7 @@ sudo chown $USER config/all_messages.txt
 default_port="776"
 #
 read -p "Enter port Alias [$default_port]: " port
-if [ -z "$port" ]
+if [ -z "$port" ];
 then
       port=$default_port
 else
@@ -221,7 +223,7 @@ echo "* Have an Admin Alias and dont share publicy)!"
 default_admin="Admin"
 #
 read -p "Enter Admin Alias [$default_admin]: " admin
-if [ -z "$admin" ]
+if [ -z "$admin" ];
 then
       admin=$default_admin
 else
