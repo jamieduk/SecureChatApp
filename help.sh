@@ -24,6 +24,9 @@ echo """
 16. Update Remote Host IP (Add To It) Add a host to remote hosts!
 17. Replace Remote Host IP List For sending to just 1 host only!
 Enter your choice: (Anything else to exit)
+18. Monitor Port 776 For Connections
+19. Change Port Number      Change Port Number To Use!
+20. Sticky Chat 2 way Private Chat Menu
 """
 echo "Press Enter For More"
 read Y
