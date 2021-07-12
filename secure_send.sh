@@ -59,7 +59,7 @@ echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 for i in "${host_ip[@]}"
 do
-   echo $Edata | ncat "$i" "$port" #& sleep 1 ; #kill $!
+   echo $Edata | ncat --ssl "$i" "$port" #& sleep 1 ; #kill $!
    clear
     echo "Message Sent."
    # or do whatever with individual element of the ipaddray

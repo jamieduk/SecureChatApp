@@ -6,6 +6,14 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 lport=777
+
+if [ ! -f server.pem ]
+then
+    echo "This will now attempt to help you create a key file, fill out the following!..."
+    openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout server.pem -out server.crt
+fi
+SSL_crt="server.crt"
+SSL_pem="server.pem"
 host_ip=`cat config/remote_host.txt`
 port=`cat config/port.txt`
 echo "Welcome To Recieve A Message"
@@ -100,7 +108,7 @@ do
     cat config/decrypted.txt
     echo "Waiting For New Message"
     echo ""
-    sudo nc -l -w 550 -v -p $port > config/rmsg.txt &&
+    sudo ncat -l -w 550ms -v -p $port --ssl-key $SSL_pem --ssl-cert $SSL_crt > config/rmsg.txt &&
     cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
     sleep 0.006
