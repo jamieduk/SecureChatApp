@@ -10,7 +10,15 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 #
-sudo apt install -y dig ncat
+FILE=/usr/bin/ncat
+if [ -f "$FILE" ];
+then
+    echo "$FILE Already Installed."
+else 
+    echo "$FILE Installing, Please Wait..."
+    sudo apt install -y ncat
+fi
+
 sudo apt install -y ucspi-tcp
 sudo chmod +x StickyChat/*.sh
 sudo chmod +x remote/*.sh
@@ -53,7 +61,8 @@ echo $uralias > config/alias.txt
 echo ""
 
 FILE=/usr/bin/7z
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ];
+then
     echo "$FILE Already Installed."
 else 
     echo "$FILE Installing, Please Wait..."
@@ -66,7 +75,8 @@ else
 fi
 
 FILE=/usr/bin/dig
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ];
+then
     echo "$FILE Already Installed."
 else 
     echo "$FILE Installing, Please Wait..."
@@ -83,7 +93,8 @@ else
 fi
 
 FILE=/usr/bin/aplay
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ];
+then
     echo "$FILE Already Installed."
 else 
     echo "$FILE Installing, Please Wait..."
@@ -91,7 +102,8 @@ else
 fi
 
 FILE=/usr/bin/figlet
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ];
+then
     echo "$FILE Already Installed."
 else 
     echo "$FILE Installing, Please Wait..."
@@ -99,7 +111,8 @@ else
 fi
 
 FILE=/usr/bin/openssl
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ];
+then
     echo "$FILE Already Installed."
 else 
     echo "$FILE Installing, Please Wait..."
