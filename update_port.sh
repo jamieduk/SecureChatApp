@@ -5,10 +5,11 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-current_port=`cat config/port.txt`
+default_port=`cat config/port.txt`
 default_port="776"
 echo "Update Port"
-echo "Currently $current_port delete $current_port then put in Port, Press Enter."
+echo ""
+echo "Currently $default_port delete $default_port then put in Port, Press Enter."
 
 if [ "$#" -eq  "0" ]
   then
