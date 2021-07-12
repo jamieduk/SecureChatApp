@@ -17,6 +17,8 @@ else
     uralias=$1
 fi
 #
+dig @resolver4.opendns.com myip.opendns.com +short > config/ip.txt
+local_ip=`cat config/ip.txt`
 echo "$uralias" > config/alias.txt
 echo "New Alias Set To "
 cat config/alias.txt

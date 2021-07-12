@@ -8,7 +8,7 @@
 #see https://stackoverflow.com/questions/29728151/how-to-listen-for-multiple-tcp-connection-using-nc
 #
 #
-defaultport=776
+port=`cat config/port.txt`
 
 if [ -z "$1" ];
 then

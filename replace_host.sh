@@ -25,7 +25,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
     echo "$ip" > config/remote_host.txt
 else
-    echo "Ok then..."
+    exit
 fi
 
 bash menu.sh

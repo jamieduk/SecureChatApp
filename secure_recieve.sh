@@ -5,7 +5,6 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-port=776
 echo "Enter Key"
 read -s key
 if test -z "$key" 
@@ -15,6 +14,7 @@ else
       key_icon="🔒 Locked!"
 fi
 host_ip=`cat config/remote_host.txt`
+port=`cat config/port.txt`
 sound=`cat config/sound.txt`
 function Atone(){
 aplay -q $1
@@ -24,7 +24,7 @@ sudo touch config/rmsg.txt
 sudo chown $USER config/rmsg.txt
 while true;
 do
-    echo -en "\e[92m "
+   #echo -en "\e[92m "
     echo "$key_icon"
     #clear
     echo "Previous Message: "

@@ -15,6 +15,8 @@ readarray -t host_ip < config/remote_host.txt
 dig @resolver4.opendns.com myip.opendns.com +short > config/ip.txt
 local_ip=`cat config/ip.txt`
 alias=`cat config/alias.txt`
+port=`cat config/port.txt`
+#
 if test -z "$key" 
 then
       key_icon="🔓 No Key"
@@ -56,11 +58,11 @@ echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 for i in "${host_ip[@]}"
 do
-   echo $Edata | nc $i 776 & sleep 1 ; kill $!
+   echo $Edata | nc $i $port & sleep 1 ; kill $!
    # or do whatever with individual element of the ipaddray
 done
 
-# echo $Edata | nc $host_ip 776 & sleep 1 ; kill $!
+# echo $Edata | nc $host_ip $port & sleep 1 ; kill $!
 clear
 count=0
 total=34

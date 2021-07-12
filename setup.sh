@@ -185,6 +185,18 @@ placeholder=`pwd`
 sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
+# Port
+default_port=776
+#
+read -p "Enter port Alias [$default_port]: " port
+if [ -z "$port" ]
+then
+      port=$default_port
+else
+      echo "port : $port You can always edit manually in config/port.txt)"
+fi
+#
+echo "$port" > config/port.txt
 #
 # Setting up Admins
 echo "Setting Up Your Admin Account Name"

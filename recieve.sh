@@ -6,6 +6,7 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 host_ip=`cat config/remote_host.txt`
+port=`cat config/port.txt`
 while true;
 do
 #
@@ -16,7 +17,7 @@ do
     cat config/rmsg.txt
     echo ""
     echo "Waiting For New Message"
-    sudo nc -l -w 1 -p 776 > config/rmsg.txt
+    sudo nc -l -w 1 -p $port > config/rmsg.txt
 #echo "All Done!"
 #echo -en"\e[94m \c"
     clear

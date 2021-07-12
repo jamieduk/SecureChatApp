@@ -6,7 +6,7 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 port=777
 clear
-echo "J~Net File Reciever"
+echo "J~Net File Reciever Port $port"
 #echo "Enter Secure Password"
 #read password
 echo -en "\e[92mPlease Wait \c"

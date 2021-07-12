@@ -6,6 +6,7 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 host_ip=`cat config/remote_host.txt`
+port=`cat config/port.txt`
 while true;
 do
 #
@@ -15,8 +16,6 @@ if [ -z "$*" ]; then
     read input; 
 fi
 #
-sudo ballbags
-#
 echo $input > config/msg.txt
 #zip -8 -r -q $input uploads/file.zip
 clear
@@ -24,7 +23,7 @@ echo "Binary Server AKA SENDER"
 clear
 echo -en "\e[92mPress Ctrl + C To Confirm Sending New Secure Message! $input \c"
 sleep 0.2
-cat config/msg.txt | nc $host_ip 776
+cat config/msg.txt | nc $host_ip $port
 count=0
 total=34
 pstr="[=======================================================================]"

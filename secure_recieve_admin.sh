@@ -5,8 +5,11 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+lport=777
+host_ip=`cat config/remote_host.txt`
+port=`cat config/port.txt`
 echo "Welcome To Recieve A Message"
-echo "You will need port 776 open in your firewall and router port fowarding rules setup!"
+echo "You will need port $port open in your firewall and router port fowarding rules setup!"
 echo ""
 echo "If asked about an admin alias, create one and dont share it with anyone else for security"
 echo "Unless you TRUST them!"
@@ -14,8 +17,6 @@ echo ""
 echo ""
 echo "Enter Key"
 read -s key
-lport=777
-host_ip=`cat config/remote_host.txt`
 #
 if test -z "$key" 
 then
@@ -99,7 +100,7 @@ do
     cat config/decrypted.txt
     echo "Waiting For New Message"
     echo ""
-    sudo nc -l -w 550 -v -p 776 > config/rmsg.txt &&
+    sudo nc -l -w 550 -v -p $port > config/rmsg.txt &&
     cat config/rmsg.txt | openssl enc -d -des3 -base64 -pass pass:$key -pbkdf2 > config/decrypted.txt
     cat config/decrypted.txt
     sleep 0.006
