@@ -10,12 +10,14 @@
 echo "Linux Bash File & Messenger App (c) J~Net 2021"
 echo ""
 #
-sudo apt install -y dig
+sudo apt install -y dig ncat
 sudo apt install -y ucspi-tcp
 sudo chmod +x StickyChat/*.sh
 sudo chmod +x remote/*.sh
 #
+sudo touch config/port.txt
 sudo touch config/remote_host.txt
+sudo touch config/admins.txt
 sudo touch config/alias.txt
 sudo touch config/all_messages.txt
 sudo touch config/decrypted.txt
@@ -186,14 +188,14 @@ sudo chmod +x *.sh*
 cd $placeholder
 sudo chown $USER config/all_messages.txt
 # Port
-default_port=776
+default_port="776"
 #
 read -p "Enter port Alias [$default_port]: " port
 if [ -z "$port" ]
 then
       port=$default_port
 else
-      echo "port : $port You can always edit manually in config/port.txt)"
+      echo "Port : $port You can always edit manually in config/port.txt)"
 fi
 #
 echo "$port" > config/port.txt
