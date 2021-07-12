@@ -17,6 +17,7 @@ local_ip=`cat config/ip.txt`
 alias=`cat config/alias.txt`
 port=`cat config/port.txt`
 #
+echo "Current Port Set To $port"
 if test -z "$key" 
 then
       key_icon="🔓 No Key"
@@ -58,7 +59,7 @@ echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 for i in "${host_ip[@]}"
 do
-   echo $Edata | nc $i $port & sleep 1 ; kill $!
+   echo $Edata | ncat "$i" "$port" & sleep 1 ; kill $!
    # or do whatever with individual element of the ipaddray
 done
 
