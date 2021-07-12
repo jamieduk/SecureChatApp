@@ -6,7 +6,10 @@
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
 port="776"
-port=`cat config/port.txt`
+if [ -f config/port.txt ];
+then
+    port=`cat config/port.txt`
+fi
 clear
 echo -en "\e[92mWelcome To J~Net Menu"
 echo ""
