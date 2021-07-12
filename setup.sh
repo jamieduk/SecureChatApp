@@ -204,9 +204,10 @@ fi
 dig @resolver4.opendns.com myip.opendns.com +short > config/ip.txt
 local_ip=`cat config/ip.txt`
 echo "$admin@$local_ip" > config/admins.txt
-echo "OK Admin Added to admins file found in config/admins.txt Or rerun ./setup.sh"
+echo "OK Admin Added to admins file found in config/admins.txt"
+echo "Edit that file manually or rerun ./setup.sh"
 echo "To update Config."
-#
+echo ""
 echo "Setup Complete, Returning to menu..."
 echo "Press Enter To Return To Menu"
 read Y
