@@ -26,7 +26,8 @@ echo "15. Connect To Secure Multi-Chat"
 echo "16. Update Remote Host IP (Add To It)"
 echo "17. Replace Remote Host IP List"
 echo "18. Monitor Port 776 For Connections"
-echo "19. Sticky Chat 2 way Private Chat Menu"
+echo "19. Change Port Number"
+echo "20. Sticky Chat 2 way Private Chat Menu"
 echo "Enter your choice: (Anything else to exit)" 
 read n
 case $n in
@@ -56,6 +57,7 @@ bash menu.sh;;
 16) bash update_host.sh;;
 17) bash replace_host.sh;;
 18) bash monitor.sh;;
-19) cd StickyChat && bash menu.sh;;
+19) bash update_port.sh;;
+20) cd StickyChat && bash menu.sh;;
 esac
 
