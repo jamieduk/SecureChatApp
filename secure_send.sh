@@ -45,7 +45,6 @@ do
     echo "Enter Text To Send: Or type #quit"
     read input; 
 done
-
 #
 echo -en "\e[92m"
 if [[ $input = *#quit* ]];
@@ -61,11 +60,8 @@ for i in "${host_ip[@]}"
 do
    echo $Edata | ncat --ssl "$i" "$port" #& sleep 1 ; #kill $!
    clear
-    echo "Message Sent."
-   # or do whatever with individual element of the ipaddray
+   echo "Message Sent."
 done
-# echo $Edata | nc $host_ip $port & sleep 1 ; kill $!
-#clear
 count=0
 total=34
 pstr="[=======================================================================]"
