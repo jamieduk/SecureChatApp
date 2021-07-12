@@ -5,6 +5,9 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
+port="776"
+port=`cat config/port.txt`
+clear
 echo -en "\e[92mWelcome To J~Net Menu"
 echo ""
 echo ""
@@ -25,7 +28,7 @@ echo "14. Generate Strong Key"
 echo "15. Connect To Secure Multi-Chat"
 echo "16. Update Remote Host IP (Add To It)"
 echo "17. Replace Remote Host IP List"
-echo "18. Monitor Port 776 For Connections"
+echo "18. Monitor Port $port For Connections"
 echo "19. Change Port Number"
 echo "20. Sticky Chat 2 way Private Chat Menu"
 echo "Enter your choice: (Anything else to exit)" 
