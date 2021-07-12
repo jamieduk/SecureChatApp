@@ -59,12 +59,13 @@ echo -en "\e[92mPress Ctrl + C To Stop Sending New Secure Message! $input \c"
 #sleep 0.2
 for i in "${host_ip[@]}"
 do
-   echo $Edata | ncat "$i" "$port" & sleep 1 ; kill $!
+   echo $Edata | ncat "$i" "$port" #& sleep 1 ; #kill $!
+   clear
+    echo "Message Sent."
    # or do whatever with individual element of the ipaddray
 done
-
 # echo $Edata | nc $host_ip $port & sleep 1 ; kill $!
-clear
+#clear
 count=0
 total=34
 pstr="[=======================================================================]"
@@ -79,11 +80,10 @@ done
 echo "Message Sent!, Please Wait 5 Seconds..."
 #
 sleep 5
-clear
+#clear
 echo "Last Message Sent"
 cat config/msg.txt
 done
 
 trap "sh secure_send.sh; exit;" SIGINT SIGTERM;
 sh send.sh
-
