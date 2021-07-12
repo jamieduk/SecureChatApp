@@ -9,7 +9,7 @@ lport=777
 
 if [ ! -f server.pem ]
 then
-    echo "This will now attempt to help you create a key file, fill out the following!..."
+    echo "This will now attempt to help you create a Certificate key file, fill out the following!..."
     openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout server.pem -out server.crt
 fi
 SSL_crt="server.crt"
@@ -135,10 +135,6 @@ do
         else
           echo $data
         fi
-    #echo -en "\e[70m \c"
     sleep 5
-#bash recieve.sh
 done
 exit
-#bash recieve.sh
-#
