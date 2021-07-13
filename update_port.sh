@@ -5,8 +5,15 @@
 # https://jnet.forumotion.com/t1729-jnet-multi-tool-2021#2677
 # https://jnet.forumotion.com/t1744-secure-chat-bash-app#2702
 #
-default_port=`cat config/port.txt`
-default_port="776"
+
+if [ -s config/port.txt ];
+then
+    default_port=`cat config/port.txt`
+else
+    default_port="776"
+fi
+#
+
 echo "Update Port"
 echo ""
 echo "Currently $default_port delete $default_port then put in Port, Press Enter."
