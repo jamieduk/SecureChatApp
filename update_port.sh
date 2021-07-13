@@ -8,15 +8,17 @@
 
 if [ -s config/port.txt ];
 then
-    default_port=`cat config/port.txt`
+    current_port=`cat config/port.txt`
+    default_port="776"
 else
     default_port="776"
+    current_port="776"
 fi
 #
-
+default_port="776"
 echo "Update Port"
 echo ""
-echo "Currently $default_port delete $default_port then put in Port, Press Enter."
+echo "Currently $current_port delete $current_port then put in Port, Press Enter."
 
 if [ "$#" -eq  "0" ]
   then
